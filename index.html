@@ -13,7 +13,62 @@
   cursor: pointer;
   transition: all 0.25s ease;
 }
+/* PREMIUM CLICKABLE CARDS */
+.clickable-card {
+  display: block;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
 
+.clickable-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: 0.3s;
+  border-radius: 18px;
+}
+
+.clickable-card:hover {
+  transform: translateY(-6px) scale(1.03);
+  border-color: gold;
+}
+
+/* ICON STYLE */
+.card-icon {
+  font-size: 26px;
+  margin-bottom: 12px;
+  display: block;
+}
+
+/* CATEGORY GLOWS */
+
+/* TOOLS (GREEN) */
+.tools-card:hover::before {
+  background: radial-gradient(circle, rgba(0,255,150,0.15), transparent);
+  opacity: 1;
+}
+
+/* SHOP (GOLD) */
+.shop-card:hover::before {
+  background: radial-gradient(circle, rgba(255,215,0,0.18), transparent);
+  opacity: 1;
+}
+
+/* SYSTEM (BLUE) */
+.system-card:hover::before {
+  background: radial-gradient(circle, rgba(0,150,255,0.18), transparent);
+  opacity: 1;
+}
+
+/* CONTENT (PURPLE) */
+.content-card:hover::before {
+  background: radial-gradient(circle, rgba(180,0,255,0.18), transparent);
+  opacity: 1;
+}
 .clickable-card:hover {
   transform: translateY(-5px) scale(1.02);
   border-color: gold;
@@ -575,43 +630,50 @@
 </section>
 
     <section class="section">
-      <div class="stats-grid">
+     <div class="stats-grid">
 
-  <a href="#tools" class="stat-box clickable-card">
+  <a href="#tools" class="stat-box clickable-card tools-card">
+    <span class="card-icon">🧮</span>
     <div class="stat-number">3</div>
     <div class="stat-label">Free trading calculators to improve planning and execution</div>
   </a>
 
-  <a href="#shop" class="stat-box clickable-card">
+  <a href="#shop" class="stat-box clickable-card shop-card">
+    <span class="card-icon">📄</span>
     <div class="stat-number">PDFs</div>
     <div class="stat-label">Structured trading resources you can sell or download instantly</div>
   </a>
 
-  <a href="#shop" class="stat-box clickable-card">
+  <a href="#shop" class="stat-box clickable-card shop-card">
+    <span class="card-icon">🤖</span>
     <div class="stat-number">EAs</div>
     <div class="stat-label">Expert Advisors and automated systems for serious traders</div>
   </a>
 
-  <a href="#loop" class="stat-box clickable-card">
+  <a href="#loop" class="stat-box clickable-card system-card">
+    <span class="card-icon">🔁</span>
     <div class="stat-number">24/7</div>
     <div class="stat-label">A brand ecosystem that keeps feeding attention back into itself</div>
   </a>
 
 </div>
 
-     <div class="features-grid">
+<div class="features-grid">
 
-  <a href="#tools" class="feature-box clickable-card">
+  <a href="#tools" class="feature-box clickable-card tools-card">
+    <span class="card-icon">🎯</span>
     <h3>Free Value First</h3>
     <p>Use the calculators to attract search traffic and build trust before asking for the sale.</p>
   </a>
 
-  <a href="#shop" class="feature-box clickable-card">
+  <a href="#shop" class="feature-box clickable-card shop-card">
+    <span class="card-icon">💰</span>
     <h3>Digital Products</h3>
     <p>Sell trading PDFs, checklists, systems, and EAs from one clean storefront.</p>
   </a>
 
-  <a href="#loop" class="feature-box clickable-card">
+  <a href="#loop" class="feature-box clickable-card content-card">
+    <span class="card-icon">🚀</span>
     <h3>Content Flywheel</h3>
     <p>Send viewers from your social content to your site, then loop them back into your next offer or video.</p>
   </a>
