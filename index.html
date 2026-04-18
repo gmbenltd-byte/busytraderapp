@@ -1,16 +1,59 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>BusyTraderApp - NAS100 Calculator</title>
+  <title>BusyTraderApp | NAS100 Calculator</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      font-family: Arial;
+      background: #0f172a;
+      color: white;
+      text-align: center;
+      padding: 50px;
+    }
+
+    h1 {
+      font-size: 40px;
+    }
+
+    input {
+      padding: 12px;
+      width: 250px;
+      margin: 10px;
+      border-radius: 8px;
+      border: none;
+    }
+
+    button {
+      padding: 12px 25px;
+      background: #22c55e;
+      border: none;
+      border-radius: 8px;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #16a34a;
+    }
+
+    #result {
+      margin-top: 20px;
+      font-size: 18px;
+    }
+  </style>
 </head>
-<body style="font-family: Arial; text-align:center; padding:50px;">
+
+<body>
+
   <h1>NAS100 Lot Size & Risk Calculator</h1>
   <p>Calculate lot size, risk, and profit in seconds</p>
 
-  <input id="balance" placeholder="Account Balance (£)" /><br><br>
-  <input id="risk" placeholder="Risk %" /><br><br>
-  <input id="sl" placeholder="Stop Loss (points)" /><br><br>
+  <input id="balance" placeholder="Account Balance (£)" /><br>
+  <input id="risk" placeholder="Risk %" /><br>
+  <input id="sl" placeholder="Stop Loss (points)" /><br>
 
   <button onclick="calculate()">Calculate</button>
 
@@ -23,7 +66,7 @@
       let sl = Number(document.getElementById("sl").value || 0);
 
       if (sl <= 0) {
-        document.getElementById("result").innerHTML = "Enter a stop loss greater than 0";
+        document.getElementById("result").innerHTML = "Enter a valid stop loss";
         return;
       }
 
@@ -31,8 +74,10 @@
       let lotSize = riskAmount / sl;
 
       document.getElementById("result").innerHTML =
-        "Lot Size: " + lotSize.toFixed(2) + " | Risk: £" + riskAmount.toFixed(2);
+        "Lot Size: " + lotSize.toFixed(2) +
+        " | Risk: £" + riskAmount.toFixed(2);
     }
   </script>
+
 </body>
 </html>
