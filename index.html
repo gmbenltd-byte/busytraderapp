@@ -7,7 +7,18 @@
   <meta name="description" content="BusyTraderApp provides Nasdaq trading tools, downloadable PDFs, Expert Advisors, and a trading content ecosystem designed to help disciplined traders execute better." />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
- 
+ .clickable-card {
+  display: block;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.clickable-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  border-color: gold;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.15);
+}
     * {
       box-sizing: border-box;
       scroll-behavior: smooth;
@@ -565,38 +576,47 @@
 
     <section class="section">
       <div class="stats-grid">
-        <div class="stat-box">
-          <div class="stat-number">3</div>
-          <div class="stat-label">Free trading calculators to improve planning and execution</div>
-        </div>
-        <div class="stat-box">
-          <div class="stat-number">PDFs</div>
-          <div class="stat-label">Structured trading resources you can sell or download instantly</div>
-        </div>
-        <div class="stat-box">
-          <div class="stat-number">EAs</div>
-          <div class="stat-label">Expert Advisors and automated systems for serious traders</div>
-        </div>
-        <div class="stat-box">
-          <div class="stat-number">24/7</div>
-          <div class="stat-label">A brand ecosystem that keeps feeding attention back into itself</div>
-        </div>
-      </div>
 
-      <div class="features-grid">
-        <div class="feature-box">
-          <h3>Free Value First</h3>
-          <p>Use the calculators to attract search traffic and build trust before asking for the sale.</p>
-        </div>
-        <div class="feature-box">
-          <h3>Digital Products</h3>
-          <p>Sell trading PDFs, checklists, systems, and EAs from one clean storefront.</p>
-        </div>
-        <div class="feature-box">
-          <h3>Content Flywheel</h3>
-          <p>Send viewers from your social content to your site, then loop them back into your next offer or video.</p>
-        </div>
-      </div>
+  <a href="#tools" class="stat-box clickable-card">
+    <div class="stat-number">3</div>
+    <div class="stat-label">Free trading calculators to improve planning and execution</div>
+  </a>
+
+  <a href="#shop" class="stat-box clickable-card">
+    <div class="stat-number">PDFs</div>
+    <div class="stat-label">Structured trading resources you can sell or download instantly</div>
+  </a>
+
+  <a href="#shop" class="stat-box clickable-card">
+    <div class="stat-number">EAs</div>
+    <div class="stat-label">Expert Advisors and automated systems for serious traders</div>
+  </a>
+
+  <a href="#loop" class="stat-box clickable-card">
+    <div class="stat-number">24/7</div>
+    <div class="stat-label">A brand ecosystem that keeps feeding attention back into itself</div>
+  </a>
+
+</div>
+
+     <div class="features-grid">
+
+  <a href="#tools" class="feature-box clickable-card">
+    <h3>Free Value First</h3>
+    <p>Use the calculators to attract search traffic and build trust before asking for the sale.</p>
+  </a>
+
+  <a href="#shop" class="feature-box clickable-card">
+    <h3>Digital Products</h3>
+    <p>Sell trading PDFs, checklists, systems, and EAs from one clean storefront.</p>
+  </a>
+
+  <a href="#loop" class="feature-box clickable-card">
+    <h3>Content Flywheel</h3>
+    <p>Send viewers from your social content to your site, then loop them back into your next offer or video.</p>
+  </a>
+
+</div>
     </section>
 
     <section id="tools" class="section">
