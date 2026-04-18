@@ -1,83 +1,436 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>BusyTraderApp | NAS100 Calculator</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BusyTraderApp | NAS100 Lot Size & Risk Calculator</title>
+  <meta
+    name="description"
+    content="Free NAS100 lot size and risk calculator. Calculate lot size, money at risk, and target profit in seconds."
+  />
   <style>
-    body {
-      font-family: Arial;
-      background: #0f172a;
-      color: white;
-      text-align: center;
-      padding: 50px;
+    :root {
+      --bg: #0b1220;
+      --panel: #111827;
+      --panel-2: #0f172a;
+      --text: #e5e7eb;
+      --muted: #94a3b8;
+      --line: #1f2937;
+      --accent: #22c55e;
+      --accent-hover: #16a34a;
+      --warn: #f59e0b;
+      --white: #ffffff;
     }
 
-    h1 {
-      font-size: 40px;
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(180deg, #08101d 0%, #0b1220 100%);
+      color: var(--text);
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 24px;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 0;
+    }
+
+    .brand {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--white);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .nav-links a:hover {
+      color: var(--white);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 28px;
+      align-items: center;
+      padding: 36px 0 22px;
+    }
+
+    .hero h1 {
+      margin: 0 0 14px;
+      font-size: 52px;
+      line-height: 1.05;
+      color: var(--white);
+    }
+
+    .hero p {
+      margin: 0 0 24px;
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.7;
+      max-width: 650px;
+    }
+
+    .cta-row {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn,
+    button {
+      background: var(--accent);
+      color: var(--white);
+      border: none;
+      border-radius: 12px;
+      padding: 13px 20px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn:hover,
+    button:hover {
+      background: var(--accent-hover);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      border: 1px solid #334155;
+      color: var(--white);
+    }
+
+    .btn-secondary:hover {
+      background: #162033;
+    }
+
+    .hero-card,
+    .section-card {
+      background: rgba(17, 24, 39, 0.88);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 22px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 700;
+      color: #bbf7d0;
+      background: rgba(34, 197, 94, 0.12);
+      border: 1px solid rgba(34, 197, 94, 0.2);
+      padding: 7px 10px;
+      border-radius: 999px;
+      margin-bottom: 14px;
+    }
+
+    .calculator h2,
+    .section-title {
+      margin: 0 0 10px;
+      color: var(--white);
+      font-size: 30px;
+    }
+
+    .section-subtitle {
+      margin: 0 0 18px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+
+    .field label {
+      font-size: 14px;
+      color: var(--text);
+      font-weight: 600;
     }
 
     input {
-      padding: 12px;
-      width: 250px;
-      margin: 10px;
-      border-radius: 8px;
-      border: none;
+      width: 100%;
+      background: #0b1324;
+      color: var(--white);
+      border: 1px solid #334155;
+      border-radius: 12px;
+      padding: 14px;
+      font-size: 15px;
+      outline: none;
     }
 
-    button {
-      padding: 12px 25px;
-      background: #22c55e;
-      border: none;
-      border-radius: 8px;
-      color: white;
-      font-size: 16px;
-      cursor: pointer;
+    input:focus {
+      border-color: #22c55e;
     }
 
-    button:hover {
-      background: #16a34a;
-    }
-
-    #result {
+    .results {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
       margin-top: 20px;
-      font-size: 18px;
+    }
+
+    .result-card {
+      background: #0b1324;
+      border: 1px solid #233047;
+      border-radius: 16px;
+      padding: 18px;
+    }
+
+    .result-label {
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 8px;
+    }
+
+    .result-value {
+      color: var(--white);
+      font-size: 28px;
+      font-weight: 700;
+      word-break: break-word;
+    }
+
+    .warning {
+      margin-top: 16px;
+      background: rgba(245, 158, 11, 0.08);
+      border: 1px solid rgba(245, 158, 11, 0.22);
+      color: #fde68a;
+      border-radius: 14px;
+      padding: 14px 16px;
+      line-height: 1.6;
+      font-size: 14px;
+    }
+
+    .section {
+      margin-top: 28px;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .feature h3 {
+      margin: 0 0 8px;
+      color: var(--white);
+      font-size: 20px;
+    }
+
+    .feature p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 15px;
+    }
+
+    .footer {
+      margin-top: 34px;
+      padding: 24px 0 40px;
+      color: var(--muted);
+      font-size: 14px;
+      text-align: center;
+    }
+
+    .small-note {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    @media (max-width: 900px) {
+      .hero,
+      .grid-2,
+      .results,
+      .feature-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1 {
+        font-size: 38px;
+      }
     }
   </style>
 </head>
-
 <body>
+  <div class="container">
+    <nav class="nav">
+      <div class="brand">BusyTraderApp</div>
+      <div class="nav-links">
+        <a href="#calculator">Calculator</a>
+        <a href="#features">Why Use It</a>
+        <a href="#next">Next Tools</a>
+      </div>
+    </nav>
 
-  <h1>NAS100 Lot Size & Risk Calculator</h1>
-  <p>Calculate lot size, risk, and profit in seconds</p>
+    <section class="hero">
+      <div>
+        <div class="badge">Free NAS100 trader tool</div>
+        <h1>NAS100 Lot Size & Risk Calculator</h1>
+        <p>
+          Calculate lot size, money at risk, and target profit in seconds.
+          Built for traders who want a faster, cleaner way to manage risk.
+        </p>
+        <div class="cta-row">
+          <a class="btn" href="#calculator">Use Calculator</a>
+          <a class="btn btn-secondary" href="#" id="youtubeLink">YouTube Coming Soon</a>
+        </div>
+      </div>
 
-  <input id="balance" placeholder="Account Balance (£)" /><br>
-  <input id="risk" placeholder="Risk %" /><br>
-  <input id="sl" placeholder="Stop Loss (points)" /><br>
+      <div class="hero-card">
+        <div class="section-subtitle" style="margin-bottom:0;">
+          Trade smarter. Protect capital. Stay consistent.
+        </div>
+      </div>
+    </section>
 
-  <button onclick="calculate()">Calculate</button>
+    <section id="calculator" class="section-card calculator">
+      <h2>Calculator</h2>
+      <p class="section-subtitle">
+        Enter your account balance, risk percentage, stop loss, and reward ratio.
+      </p>
 
-  <h3 id="result"></h3>
+      <div class="grid-2">
+        <div class="field">
+          <label for="balance">Account Balance (£)</label>
+          <input id="balance" type="number" placeholder="1000" />
+        </div>
+
+        <div class="field">
+          <label for="risk">Risk %</label>
+          <input id="risk" type="number" placeholder="1" />
+        </div>
+
+        <div class="field">
+          <label for="sl">Stop Loss (points)</label>
+          <input id="sl" type="number" placeholder="100" />
+        </div>
+
+        <div class="field">
+          <label for="rr">Reward Ratio (R)</label>
+          <input id="rr" type="number" placeholder="2" />
+        </div>
+      </div>
+
+      <button onclick="calculate()">Calculate</button>
+
+      <div class="results">
+        <div class="result-card">
+          <div class="result-label">Lot Size</div>
+          <div class="result-value" id="lotSize">0.00</div>
+        </div>
+
+        <div class="result-card">
+          <div class="result-label">Money at Risk</div>
+          <div class="result-value" id="riskAmount">£0.00</div>
+        </div>
+
+        <div class="result-card">
+          <div class="result-label">Target Profit</div>
+          <div class="result-value" id="targetProfit">£0.00</div>
+        </div>
+      </div>
+
+      <div class="warning">
+        Important: This calculator gives an estimate. Always confirm your broker’s
+        contract size and point value before placing a live trade.
+      </div>
+
+      <div class="small-note" id="message"></div>
+    </section>
+
+    <section id="features" class="section section-card">
+      <h2 class="section-title">Why use BusyTraderApp</h2>
+      <p class="section-subtitle">
+        This is your starting point for a full trader toolkit.
+      </p>
+
+      <div class="feature-grid">
+        <div class="feature">
+          <h3>Fast</h3>
+          <p>No spreadsheet needed. Get your numbers in seconds.</p>
+        </div>
+        <div class="feature">
+          <h3>Simple</h3>
+          <p>Clear inputs, clear outputs, no clutter.</p>
+        </div>
+        <div class="feature">
+          <h3>Built for traders</h3>
+          <p>Made to support better risk discipline on NAS100 trades.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="next" class="section section-card">
+      <h2 class="section-title">What comes next</h2>
+      <p class="section-subtitle">
+        Next upgrades can include a risk-reward tool, session timer, daily bias page,
+        YouTube links, Telegram links, and SEO pages to pull in free traffic.
+      </p>
+    </section>
+
+    <div class="footer">
+      BusyTraderApp © 2026 · Trading involves risk. This tool is for educational use only.
+    </div>
+  </div>
 
   <script>
     function calculate() {
-      let balance = Number(document.getElementById("balance").value || 0);
-      let risk = Number(document.getElementById("risk").value || 0);
-      let sl = Number(document.getElementById("sl").value || 0);
+      const balance = Number(document.getElementById("balance").value || 0);
+      const risk = Number(document.getElementById("risk").value || 0);
+      const sl = Number(document.getElementById("sl").value || 0);
+      const rr = Number(document.getElementById("rr").value || 0);
+      const message = document.getElementById("message");
 
-      if (sl <= 0) {
-        document.getElementById("result").innerHTML = "Enter a valid stop loss";
+      if (balance <= 0 || risk <= 0 || sl <= 0) {
+        message.textContent = "Enter valid values greater than 0 in balance, risk %, and stop loss.";
+        document.getElementById("lotSize").textContent = "0.00";
+        document.getElementById("riskAmount").textContent = "£0.00";
+        document.getElementById("targetProfit").textContent = "£0.00";
         return;
       }
 
-      let riskAmount = balance * (risk / 100);
-      let lotSize = riskAmount / sl;
+      const riskAmount = balance * (risk / 100);
+      const lotSize = riskAmount / sl;
+      const targetProfit = riskAmount * (rr > 0 ? rr : 0);
 
-      document.getElementById("result").innerHTML =
-        "Lot Size: " + lotSize.toFixed(2) +
-        " | Risk: £" + riskAmount.toFixed(2);
+      document.getElementById("lotSize").textContent = lotSize.toFixed(2);
+      document.getElementById("riskAmount").textContent = "£" + riskAmount.toFixed(2);
+      document.getElementById("targetProfit").textContent = "£" + targetProfit.toFixed(2);
+      message.textContent = "";
     }
   </script>
-
 </body>
 </html>
