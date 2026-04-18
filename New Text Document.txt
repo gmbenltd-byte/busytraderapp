@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>BusyTraderApp - NAS100 Calculator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body style="font-family: Arial; text-align:center; padding:50px;">
+
+  <h1>NAS100 Lot Size & Risk Calculator</h1>
+  <p>Calculate lot size, risk, and profit in seconds</p>
+
+  <input id="balance" placeholder="Account Balance (£)" /><br><br>
+  <input id="risk" placeholder="Risk %" /><br><br>
+  <input id="sl" placeholder="Stop Loss (points)" /><br><br>
+
+  <button onclick="calculate()">Calculate</button>
+
+  <h3 id="result"></h3>
+
+  <script>
+    function calculate() {
+      let balance = document.getElementById("balance").value;
+      let risk = document.getElementById("risk").value;
+      let sl = document.getElementById("sl").value;
+
+      let riskAmount = balance * (risk / 100);
+      let lotSize = riskAmount / sl;
+
+      document.getElementById("result").innerHTML =
+        "Lot Size: " + lotSize.toFixed(2) +
+        " | Risk: £" + riskAmount.toFixed(2);
+    }
+  </script>
+
+</body>
+</html>
