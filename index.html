@@ -80,7 +80,8 @@
       text-align: center;
     }
 
-    .badge {
+    .badge,
+    .product-badge {
       display: inline-block;
       padding: 8px 14px;
       border: 1px solid rgba(255, 215, 0, 0.35);
@@ -89,6 +90,13 @@
       font-size: 13px;
       margin-bottom: 20px;
       background: rgba(255, 215, 0, 0.06);
+    }
+
+    .product-badge {
+      background: gold;
+      color: #111;
+      font-weight: bold;
+      margin-bottom: 14px;
     }
 
     h1 {
@@ -190,33 +198,56 @@
       font-size: 16px;
     }
 
-    .grid-3 {
+    .grid-3,
+    .product-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 22px;
     }
 
-    .card {
+    .product-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .card,
+    .product-card {
       background: #121212;
       border: 1px solid #232323;
       border-radius: 18px;
       padding: 24px;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+      transition: all 0.25s ease;
     }
 
-    .card:hover {
+    .card:hover,
+    .product-card:hover {
+      transform: translateY(-5px);
       border-color: gold;
-      box-shadow: 0 0 22px rgba(255, 215, 0, 0.12);
+      box-shadow: 0 0 26px rgba(255, 215, 0, 0.16);
     }
 
-    .card h3 {
+    .product-card.featured {
+      border: 2px solid gold;
+      box-shadow: 0 0 30px rgba(255, 215, 0, 0.18);
+    }
+
+    .card h3,
+    .product-card h3 {
       margin-top: 0;
       font-size: 22px;
       color: #fff;
     }
 
+    .product-card h4 {
+      color: #c9a227;
+      margin: 8px 0 12px;
+      font-size: 16px;
+    }
+
     .card p,
-    .card li {
+    .card li,
+    .product-card p,
+    .product-card li {
       color: #bfbfbf;
       line-height: 1.6;
       font-size: 15px;
@@ -229,7 +260,8 @@
       margin: 14px 0;
     }
 
-    .buy-btn {
+    .buy-btn,
+    .product-btn {
       display: inline-block;
       width: 100%;
       text-align: center;
@@ -239,6 +271,13 @@
       color: #111;
       font-weight: bold;
       margin-top: 14px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .buy-btn:hover,
+    .product-btn:hover {
+      filter: brightness(1.12);
     }
 
     label {
@@ -300,6 +339,26 @@
       transform: scale(1.03);
     }
 
+    .lead-form input {
+      margin-bottom: 12px;
+    }
+
+    .consent {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      color: #cccccc;
+      font-size: 13px;
+      line-height: 1.4;
+      margin-top: 8px;
+      font-weight: normal;
+    }
+
+    .consent input {
+      width: auto;
+      margin-top: 2px;
+    }
+
     .footer {
       margin-top: 44px;
       padding: 30px 20px;
@@ -308,6 +367,12 @@
       color: #8c8c8c;
       font-size: 14px;
       line-height: 1.8;
+    }
+
+    @media (max-width: 1100px) {
+      .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
 
     @media (max-width: 900px) {
@@ -325,6 +390,12 @@
 
       .section-title {
         font-size: 30px;
+      }
+    }
+
+    @media (max-width: 650px) {
+      .product-grid {
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -355,12 +426,12 @@
       </p>
 
       <div class="hero-buttons">
-        <a href="#pricing" class="btn btn-primary">Start AI Scanner</a>
+        <a href="#shop" class="btn btn-primary">View EAs</a>
         <a href="#tools" class="btn btn-secondary">Use Free Tools</a>
       </div>
 
       <div id="socials" class="social-bar">
-        <a class="social-link youtube" href="https://http://www.youtube.com/@BusyTraderTV" target="_blank">
+        <a class="social-link youtube" href="https://www.youtube.com/@BusyTraderTV" target="_blank">
           <i class="fab fa-youtube"></i> YouTube
         </a>
         <a class="social-link facebook" href="https://facebook.com/profile.php?id=61568863708099" target="_blank">
@@ -503,32 +574,88 @@
     </section>
 
     <section id="shop" class="section">
-      <h2 class="section-title">Shop PDFs & EAs</h2>
+      <h2 class="section-title">BusyTrader Products</h2>
       <p class="section-subtitle">
-        Download trading guides, tools, templates, and Expert Advisor resources.
+        Start with the free checklist, upgrade to the strategy PDF, then unlock the full NAS100 EA subscription.
       </p>
 
-      <div class="grid-3">
-        <div class="card">
-          <h3>Nasdaq Scalping PDF</h3>
-          <p>A practical trading guide with setup rules, entry filters, and risk management framework.</p>
+      <div class="product-grid">
+
+        <div class="product-card featured">
+          <span class="product-badge">Main Product</span>
+          <h3>BusyTrader NAS100 Breakout EA</h3>
+          <h4>Monthly Access</h4>
+          <div class="price">£49/month</div>
+          <p>
+            MT4 + MT5 EA with current daily candle bias, M5 breakout logic, PSS volume confirmation,
+            break-even, trailing stop, spread protection, and subscription license validation.
+          </p>
+          <ul>
+            <li>MT4 + MT5 included</li>
+            <li>License key required</li>
+            <li>Account binding enabled</li>
+            <li>Updates while subscribed</li>
+          </ul>
+          <a class="product-btn" href="#">Subscribe Monthly</a>
+        </div>
+
+        <div class="product-card">
+          <span class="product-badge">Best Value</span>
+          <h3>BusyTrader NAS100 Breakout EA</h3>
+          <h4>Annual Access</h4>
+          <div class="price">£399/year</div>
+          <p>
+            Full-year access to the BusyTrader NAS100 EA for traders who want a longer-term
+            rules-based breakout system with MT4 and MT5 support.
+          </p>
+          <ul>
+            <li>MT4 + MT5 included</li>
+            <li>Subscription validation</li>
+            <li>Account locked license</li>
+            <li>Priority updates</li>
+          </ul>
+          <a class="product-btn" href="#">Get Annual Access</a>
+        </div>
+
+        <div class="product-card">
+          <span class="product-badge">PDF Guide</span>
+          <h3>BusyTrader NAS100 Strategy PDF</h3>
+          <h4>One-Time Purchase</h4>
           <div class="price">£19</div>
-          <a class="buy-btn" href="https://t.me/YOUR_TELEGRAM" target="_blank">Buy PDF</a>
+          <p>
+            Learn the strategy behind the EA: daily bias, breakout zones, PSS volume confirmation,
+            entries, exits, and risk rules.
+          </p>
+          <ul>
+            <li>Entry checklist</li>
+            <li>Risk checklist</li>
+            <li>Trade examples</li>
+            <li>EA logic explained</li>
+          </ul>
+          <a class="product-btn" href="#">Buy PDF</a>
         </div>
 
-        <div class="card">
-          <h3>BusyTrader Risk Pack</h3>
-          <p>Compounding plans, challenge models, and discipline sheets.</p>
-          <div class="price">£29</div>
-          <a class="buy-btn" href="https://t.me/YOUR_TELEGRAM" target="_blank">Buy Bundle</a>
+        <div class="product-card">
+          <span class="product-badge">Free</span>
+          <h3>Free NAS100 Checklist</h3>
+          <h4>Lead Magnet</h4>
+          <div class="price">£0</div>
+          <p>
+            Download the free NAS100 breakout checklist and learn the core rules used to filter
+            better breakout opportunities.
+          </p>
+
+          <form class="lead-form" onsubmit="handleFreeChecklist(event)">
+            <input type="text" id="leadName" placeholder="Your name" required>
+            <input type="email" id="leadEmail" placeholder="Your email" required>
+            <label class="consent">
+              <input type="checkbox" required>
+              <span>I agree to receive product updates and trading resources.</span>
+            </label>
+            <button type="submit" class="product-btn">Download Free Checklist</button>
+          </form>
         </div>
 
-        <div class="card">
-          <h3>BusyTrader EA</h3>
-          <p>Expert Advisor tools for rules-based execution and trading automation.</p>
-          <div class="price">£149</div>
-          <a class="buy-btn" href="https://t.me/YOUR_TELEGRAM" target="_blank">Buy EA</a>
-        </div>
       </div>
     </section>
 
@@ -602,6 +729,17 @@
         Required daily target: <strong>$${formatMoney(dailyTarget)}</strong><br>
         To reach <strong>$${formatMoney(monthlyGoal)}</strong> in <strong>${tradingDays}</strong> trading days.
       `;
+    }
+
+    function handleFreeChecklist(event) {
+      event.preventDefault();
+
+      const name = document.getElementById("leadName").value;
+      const email = document.getElementById("leadEmail").value;
+
+      alert("Thank you " + name + "! Your free checklist request has been received for: " + email);
+
+      // Later connect this form to your backend, Google Sheet, MailerLite, ConvertKit, or database.
     }
   </script>
 </body>
