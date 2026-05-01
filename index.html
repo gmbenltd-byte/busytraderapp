@@ -3,77 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BusyTraderApp | Nasdaq Tools, PDFs & EAs</title>
-  <meta name="description" content="BusyTraderApp provides Nasdaq trading tools, downloadable PDFs, Expert Advisors, and a trading content ecosystem designed to help disciplined traders execute better." />
+
+  <title>BusyTraderApp | AI Trading Tools, PDFs & EAs</title>
+  <meta name="description" content="BusyTraderApp provides AI-powered trading tools, scanners, PDFs, Expert Advisors, and resources for disciplined traders." />
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
   <style>
- .clickable-card {
-  display: block;
-  text-decoration: none;
-  cursor: pointer;
-  transition: all 0.25s ease;
-}
-/* PREMIUM CLICKABLE CARDS */
-.clickable-card {
-  display: block;
-  text-decoration: none;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.clickable-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  opacity: 0;
-  transition: 0.3s;
-  border-radius: 18px;
-}
-
-.clickable-card:hover {
-  transform: translateY(-6px) scale(1.03);
-  border-color: gold;
-}
-
-/* ICON STYLE */
-.card-icon {
-  font-size: 26px;
-  margin-bottom: 12px;
-  display: block;
-}
-
-/* CATEGORY GLOWS */
-
-/* TOOLS (GREEN) */
-.tools-card:hover::before {
-  background: radial-gradient(circle, rgba(0,255,150,0.15), transparent);
-  opacity: 1;
-}
-
-/* SHOP (GOLD) */
-.shop-card:hover::before {
-  background: radial-gradient(circle, rgba(255,215,0,0.18), transparent);
-  opacity: 1;
-}
-
-/* SYSTEM (BLUE) */
-.system-card:hover::before {
-  background: radial-gradient(circle, rgba(0,150,255,0.18), transparent);
-  opacity: 1;
-}
-
-/* CONTENT (PURPLE) */
-.content-card:hover::before {
-  background: radial-gradient(circle, rgba(180,0,255,0.18), transparent);
-  opacity: 1;
-}
-.clickable-card:hover {
-  transform: translateY(-5px) scale(1.02);
-  border-color: gold;
-  box-shadow: 0 0 20px rgba(255, 215, 0, 0.15);
-}
     * {
       box-sizing: border-box;
       scroll-behavior: smooth;
@@ -191,132 +127,58 @@
       color: #111;
     }
 
-    .btn-primary:hover {
-      opacity: 0.95;
-      transform: translateY(-1px);
-    }
-
     .btn-secondary {
       background: #151515;
       border: 1px solid #2b2b2b;
       color: #ffffff;
     }
 
-    .btn-secondary:hover {
-      background: #1c1c1c;
+    .btn:hover {
+      transform: translateY(-2px);
+      opacity: 0.95;
     }
 
     .social-bar {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 14px;
-  margin-top: 26px;
-}
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 26px;
+    }
 
-.social-link {
-  padding: 12px 18px;
-  border-radius: 12px;
-  border: 1px solid #262626;
-  background: #111111;
-  color: #dddddd;
-  font-size: 14px;
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  transition: all 0.25s ease;
-  box-shadow: 0 0 0 rgba(0,0,0,0);
-}
+    .social-link {
+      padding: 12px 18px;
+      border-radius: 12px;
+      border: 1px solid #262626;
+      background: #111111;
+      color: #dddddd;
+      font-size: 14px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: all 0.25s ease;
+    }
 
-.social-link i {
-  font-size: 18px;
-  transition: transform 0.25s ease;
-}
+    .social-link:hover {
+      transform: translateY(-3px) scale(1.03);
+      border-color: gold;
+    }
 
-.social-link:hover {
-  transform: translateY(-3px) scale(1.03);
-}
+    .social-link.youtube i { color: #ff0000; }
+    .social-link.facebook i { color: #1877f2; }
+    .social-link.tiktok i { color: #00f2ea; }
+    .social-link.instagram i { color: #e1306c; }
+    .social-link.telegram i { color: #229ED9; }
 
-.social-link:hover i {
-  transform: scale(1.12);
-}
-
-/* YouTube */
-.social-link.youtube:hover {
-  color: #ff4d4d;
-  background: rgba(255, 0, 0, 0.1);
-  border-color: #ff0000;
-  box-shadow: 0 0 14px rgba(255, 0, 0, 0.45);
-}
-
-.social-link.facebook:hover {
-  color: #7fb0ff;
-  background: rgba(24, 119, 242, 0.1);
-  border-color: #1877f2;
-  box-shadow: 0 0 12px rgba(59, 89, 152, 0.35);
-}
-
-.social-link.tiktok:hover {
-  color: #ffffff;
-  background: rgba(0, 242, 234, 0.08);
-  border-color: #00f2ea;
-  box-shadow:
-    0 0 10px rgba(0, 242, 234, 0.55),
-    0 0 18px rgba(255, 0, 80, 0.35);
-  text-shadow:
-    1px 0 #00f2ea,
-    -1px 0 #ff0050;
-}
-
-.social-link.instagram:hover {
-  color: #ffb3d9;
-  background: rgba(225, 48, 108, 0.1);
-  border-color: #e1306c;
-  box-shadow: 0 0 14px rgba(225, 48, 108, 0.35);
-}
-
-.social-link.telegram:hover {
-  color: #66c7ff;
-  background: rgba(34, 158, 217, 0.1);
-  border-color: #229ED9;
-  box-shadow: 0 0 16px rgba(34, 158, 217, 0.45);
-}
-
-/* YouTube */
-.social-link.youtube i {
-  color: #ff0000;
-}
-
-/* Facebook */
-.social-link.facebook i {
-  color: #1877f2;
-}
-
-/* TikTok */
-.social-link.tiktok i {
-  color: #00f2ea;
-  text-shadow:
-    1px 0 #ff0050,
-    -1px 0 #00f2ea;
-}
-
-/* Instagram */
-.social-link.instagram i {
-  color: #e1306c;
-}
-
-/* Telegram */
-.social-link.telegram i {
-  color: #229ED9;
-}
     .section {
-      padding: 26px 0 30px;
+      padding: 60px 0;
     }
 
     .section-title {
-      font-size: 34px;
+      font-size: 38px;
       text-align: center;
       margin: 0 0 14px;
+      color: gold;
     }
 
     .section-subtitle {
@@ -328,51 +190,13 @@
       font-size: 16px;
     }
 
-    .stats-grid,
-    .features-grid,
-    .product-grid,
-    .tools-grid,
-    .loop-grid {
+    .grid-3 {
       display: grid;
+      grid-template-columns: repeat(3, 1fr);
       gap: 22px;
     }
 
-    .stats-grid {
-      grid-template-columns: repeat(4, 1fr);
-      margin-bottom: 26px;
-    }
-
-    .stat-box {
-      background: #111111;
-      border: 1px solid #212121;
-      border-radius: 18px;
-      padding: 22px;
-      text-align: center;
-    }
-
-    .stat-number {
-      color: gold;
-      font-size: 28px;
-      font-weight: bold;
-      margin-bottom: 8px;
-    }
-
-    .stat-label {
-      color: #bbbbbb;
-      font-size: 14px;
-      line-height: 1.5;
-    }
-
-    .features-grid {
-      grid-template-columns: repeat(3, 1fr);
-      margin-bottom: 26px;
-    }
-
-    .feature-box,
-    .tool-card,
-    .product-card,
-    .loop-card,
-    .cta-box {
+    .card {
       background: #121212;
       border: 1px solid #232323;
       border-radius: 18px;
@@ -380,29 +204,41 @@
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
     }
 
-    .feature-box h3,
-    .tool-card h3,
-    .product-card h3,
-    .loop-card h3 {
-      margin-top: 0;
-      margin-bottom: 12px;
-      font-size: 22px;
+    .card:hover {
+      border-color: gold;
+      box-shadow: 0 0 22px rgba(255, 215, 0, 0.12);
     }
 
-    .feature-box p,
-    .tool-card p.small,
-    .product-card p,
-    .loop-card p,
-    .cta-box p {
+    .card h3 {
+      margin-top: 0;
+      font-size: 22px;
+      color: #fff;
+    }
+
+    .card p,
+    .card li {
       color: #bfbfbf;
       line-height: 1.6;
-      margin-bottom: 0;
       font-size: 15px;
     }
 
-    .tools-grid {
-      grid-template-columns: repeat(3, 1fr);
-      margin-top: 26px;
+    .price {
+      color: gold;
+      font-size: 30px;
+      font-weight: bold;
+      margin: 14px 0;
+    }
+
+    .buy-btn {
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+      padding: 14px;
+      border-radius: 12px;
+      background: gold;
+      color: #111;
+      font-weight: bold;
+      margin-top: 14px;
     }
 
     label {
@@ -440,11 +276,9 @@
       font-weight: bold;
       font-size: 15px;
       cursor: pointer;
-      transition: 0.2s ease;
     }
 
-  
-   .result {
+    .result {
       margin-top: 18px;
       padding: 14px;
       border-radius: 12px;
@@ -456,245 +290,129 @@
       min-height: 54px;
     }
 
-    .product-grid {
-      grid-template-columns: repeat(3, 1fr);
-      margin-top: 26px;
-    }
-
-    .price {
-      color: gold;
-      font-size: 26px;
-      font-weight: bold;
-      margin: 14px 0;
-    }
-
-    .product-list {
-      padding-left: 18px;
-      margin: 14px 0 20px;
-      color: #cfcfcf;
-      line-height: 1.7;
-      font-size: 14px;
-    }
-
-    .buy-btn {
-      display: inline-block;
-      width: 100%;
+    .pricing-card {
+      border: 1px solid rgba(255, 215, 0, 0.35);
       text-align: center;
-      padding: 14px;
-      border-radius: 12px;
-      background: gold;
-      color: #111;
-      font-weight: bold;
     }
 
-    .buy-btn:hover {
-      opacity: 0.95;
+    .pricing-card.featured {
+      border: 2px solid gold;
+      transform: scale(1.03);
     }
 
-    .loop-grid {
-      grid-template-columns: repeat(4, 1fr);
-      margin-top: 26px;
-    }
-
-    .loop-step {
-      display: inline-block;
-      width: 34px;
-      height: 34px;
-      line-height: 34px;
-      text-align: center;
-      border-radius: 50%;
-      background: gold;
-      color: #111;
-      font-weight: bold;
-      margin-bottom: 14px;
-    }
-
-    .cta-box {
-      text-align: center;
-      margin-top: 24px;
-    }
-
-    .cta-box h2 {
-      margin-top: 0;
-      font-size: 32px;
-      margin-bottom: 12px;
-    }
-
-    .cta-buttons {
-      margin-top: 24px;
-      display: flex;
-      justify-content: center;
-      gap: 14px;
-      flex-wrap: wrap;
-    }
-<div class="footer-extra">
-  <p>📧 Support: support@busytraderapp.com</p>
-  <p>💳 Payments secured via Stripe / Gumroad</p>
-  <p>⚠️ This is not financial advice. Trading involves risk.</p>
-</div>
     .footer {
       margin-top: 44px;
-      padding-top: 24px;
+      padding: 30px 20px;
       border-top: 1px solid #1d1d1d;
       text-align: center;
-      color: #7c7c7c;
+      color: #8c8c8c;
       font-size: 14px;
-      line-height: 1.7;
+      line-height: 1.8;
     }
 
-    @media (max-width: 1024px) {
-      .stats-grid,
-      .features-grid,
-      .tools-grid,
-      .product-grid,
-      .loop-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      h1 {
-        font-size: 44px;
-      }
-    }
-
-    @media (max-width: 640px) {
-      .stats-grid,
-      .features-grid,
-      .tools-grid,
-      .product-grid,
-      .loop-grid {
+    @media (max-width: 900px) {
+      .grid-3 {
         grid-template-columns: 1fr;
       }
 
-      h1 {
-        font-size: 34px;
+      .pricing-card.featured {
+        transform: none;
       }
 
-      .hero p {
-        font-size: 16px;
+      h1 {
+        font-size: 36px;
       }
 
       .section-title {
-        font-size: 28px;
-      }
-
-      .cta-box h2 {
-        font-size: 26px;
+        font-size: 30px;
       }
     }
   </style>
 </head>
+
 <body>
   <div class="topbar">
     <div class="topbar-inner">
       <div class="brand">BusyTraderApp</div>
       <div class="nav">
-        <a href="#tools">Tools</a>
+        <a href="#ai">AI Scanner</a>
+        <a href="#tools">Free Tools</a>
+        <a href="#pricing">Pricing</a>
         <a href="#shop">Shop</a>
-        <a href="#loop">System</a>
         <a href="#socials">Socials</a>
       </div>
     </div>
   </div>
 
   <div class="wrapper">
-<section class="hero">
-  <div class="badge">Nasdaq Execution Tools • PDFs • EAs</div>
-  <h1>Trade Smarter. Execute Faster. Stay Disciplined.</h1>
-  <p>
-    BusyTraderApp is your trading hub for practical tools, downloadable PDF guides,
-    Expert Advisors, and a content ecosystem built to keep traders learning, returning, and improving.
-  </p>
 
-  <div class="hero-buttons">
-    <a href="#shop" class="btn btn-primary">Shop PDFs & EAs</a>
-    <a href="#tools" class="btn btn-secondary">Use Free Tools</a>
-  </div>
+    <section class="hero">
+      <div class="badge">AI Trading Tools • PDFs • EAs</div>
+      <h1>Trade Smarter. Execute Faster. Stay Disciplined.</h1>
+      <p>
+        BusyTraderApp provides AI-powered trading tools, practical calculators,
+        trading PDFs, and automation resources for disciplined traders.
+      </p>
 
-  <div id="socials" class="social-bar">
-    <a class="social-link youtube" href="https://youtube.com/@YOUR_HANDLE" target="_blank">
-      <i class="fab fa-youtube"></i> YouTube
-    </a>
+      <div class="hero-buttons">
+        <a href="#pricing" class="btn btn-primary">Start AI Scanner</a>
+        <a href="#tools" class="btn btn-secondary">Use Free Tools</a>
+      </div>
 
-    <a class="social-link facebook" href="https://facebook.com/YOUR_PAGE" target="_blank">
-      <i class="fab fa-facebook-f"></i> Facebook
-    </a>
+      <div id="socials" class="social-bar">
+        <a class="social-link youtube" href="https://youtube.com/@YOUR_HANDLE" target="_blank">
+          <i class="fab fa-youtube"></i> YouTube
+        </a>
+        <a class="social-link facebook" href="https://facebook.com/YOUR_PAGE" target="_blank">
+          <i class="fab fa-facebook-f"></i> Facebook
+        </a>
+        <a class="social-link tiktok" href="https://www.tiktok.com/@YOUR_HANDLE" target="_blank">
+          <i class="fab fa-tiktok"></i> TikTok
+        </a>
+        <a class="social-link instagram" href="https://instagram.com/YOUR_HANDLE" target="_blank">
+          <i class="fab fa-instagram"></i> Instagram
+        </a>
+        <a class="social-link telegram" href="https://t.me/YOUR_TELEGRAM" target="_blank">
+          <i class="fab fa-telegram-plane"></i> Telegram
+        </a>
+      </div>
+    </section>
 
-    <a class="social-link tiktok" href="https://www.tiktok.com/@YOUR_HANDLE" target="_blank">
-      <i class="fab fa-tiktok"></i> TikTok
-    </a>
+    <section id="ai" class="section">
+      <h2 class="section-title">AI-Powered Trading Scanner</h2>
+      <p class="section-subtitle">
+        Scan the market for breakout setups, filter opportunities with AI confidence scoring,
+        and receive alerts through your dashboard and Telegram.
+      </p>
 
-    <a class="social-link instagram" href="https://instagram.com/YOUR_HANDLE" target="_blank">
-      <i class="fab fa-instagram"></i> Instagram
-    </a>
+      <div class="grid-3">
+        <div class="card">
+          <h3>1. Market Scanning</h3>
+          <p>The scanner searches for stocks showing trend strength, consolidation, and breakout potential.</p>
+        </div>
 
-    <a class="social-link telegram" href="https://t.me/YOUR_TELEGRAM" target="_blank">
-      <i class="fab fa-telegram-plane"></i> Telegram
-    </a>
-  </div>
-</section>
+        <div class="card">
+          <h3>2. AI Filtering</h3>
+          <p>Each setup is checked using AI probability scoring before being approved as a signal.</p>
+        </div>
 
-    <section class="section">
-     <div class="stats-grid">
-
-  <a href="#tools" class="stat-box clickable-card tools-card">
-    <span class="card-icon">🧮</span>
-    <div class="stat-number">3</div>
-    <div class="stat-label">Free trading calculators to improve planning and execution</div>
-  </a>
-
-  <a href="#shop" class="stat-box clickable-card shop-card">
-    <span class="card-icon">📄</span>
-    <div class="stat-number">PDFs</div>
-    <div class="stat-label">Structured trading resources you can sell or download instantly</div>
-  </a>
-
-  <a href="#shop" class="stat-box clickable-card shop-card">
-    <span class="card-icon">🤖</span>
-    <div class="stat-number">EAs</div>
-    <div class="stat-label">Expert Advisors and automated systems for serious traders</div>
-  </a>
-
-  <a href="#loop" class="stat-box clickable-card system-card">
-    <span class="card-icon">🔁</span>
-    <div class="stat-number">24/7</div>
-    <div class="stat-label">A brand ecosystem that keeps feeding attention back into itself</div>
-  </a>
-
-</div>
-
-<div class="features-grid">
-
-  <a href="#tools" class="feature-box clickable-card tools-card">
-    <span class="card-icon">🎯</span>
-    <h3>Free Value First</h3>
-    <p>Use the calculators to attract search traffic and build trust before asking for the sale.</p>
-  </a>
-
-  <a href="#shop" class="feature-box clickable-card shop-card">
-    <span class="card-icon">💰</span>
-    <h3>Digital Products</h3>
-    <p>Sell trading PDFs, checklists, systems, and EAs from one clean storefront.</p>
-  </a>
-
-  <a href="#loop" class="feature-box clickable-card content-card">
-    <span class="card-icon">🚀</span>
-    <h3>Content Flywheel</h3>
-    <p>Send viewers from your social content to your site, then loop them back into your next offer or video.</p>
-  </a>
-
-</div>
+        <div class="card">
+          <h3>3. Alerts & Dashboard</h3>
+          <p>Approved signals can be sent to Telegram and tracked inside your performance dashboard.</p>
+        </div>
+      </div>
     </section>
 
     <section id="tools" class="section">
       <h2 class="section-title">Free Trading Tools</h2>
       <p class="section-subtitle">
-        These tools help traders think clearly before placing a trade. They also act as lead magnets that bring people into your ecosystem.
+        Simple calculators to help traders plan risk, growth, and daily targets before placing trades.
       </p>
 
-      <div class="tools-grid">
-        <div class="tool-card">
+      <div class="grid-3">
+        <div class="card">
           <h3>Risk Calculator</h3>
-          <p class="small">Calculate how much money you are risking per trade based on your account balance and chosen risk percentage.</p>
+          <p>Calculate how much money you are risking per trade.</p>
 
           <label for="balance">Account Balance ($)</label>
           <input type="number" id="balance" placeholder="e.g. 5000" />
@@ -706,9 +424,9 @@
           <div class="result" id="riskResult">Your result will appear here.</div>
         </div>
 
-        <div class="tool-card">
+        <div class="card">
           <h3>Compounding Calculator</h3>
-          <p class="small">Estimate how your account could grow over time with a fixed daily return percentage.</p>
+          <p>Estimate account growth using a fixed daily return percentage.</p>
 
           <label for="start">Starting Balance ($)</label>
           <input type="number" id="start" placeholder="e.g. 1000" />
@@ -723,9 +441,9 @@
           <div class="result" id="compoundResult">Your result will appear here.</div>
         </div>
 
-        <div class="tool-card">
+        <div class="card">
           <h3>Daily Target Calculator</h3>
-          <p class="small">Break a monthly profit goal into a realistic daily target based on your number of trading days.</p>
+          <p>Break a monthly profit goal into a daily target.</p>
 
           <label for="monthlyGoal">Monthly Profit Goal ($)</label>
           <input type="number" id="monthlyGoal" placeholder="e.g. 3000" />
@@ -739,102 +457,88 @@
       </div>
     </section>
 
-    <section id="shop" class="section">
-      <h2 class="section-title">Shop PDFs & EAs</h2>
+    <section id="pricing" class="section">
+      <h2 class="section-title">BusyTrader AI Subscriptions</h2>
       <p class="section-subtitle">
-        This is where your traffic turns into revenue. Add your PDFs, trading playbooks, templates, and Expert Advisors here.
+        Choose your plan and unlock AI-powered trading tools.
       </p>
 
-      <div class="product-grid">
-        <div class="product-card">
-          <h3>Nasdaq Scalping PDF</h3>
-          <p>A practical trading guide that explains your setup, rules, entry filters, and risk management framework.</p>
-          <div class="price">£19</div>
-          <ul class="product-list">
-            <li>Entry checklist</li>
-            <li>Risk rules</li>
-            <li>Session timing guide</li>
-            <li>Execution framework</li>
+      <div class="grid-3">
+        <div class="card pricing-card">
+          <h3>AI Scanner</h3>
+          <div class="price">£29/month</div>
+          <p>AI breakout scanner, Telegram alerts, and performance dashboard.</p>
+          <ul>
+            <li>AI-filtered scanner</li>
+            <li>Signal dashboard</li>
+            <li>Telegram alerts</li>
           </ul>
-          <a class="buy-btn" href="https://t.me/YOUR_TELEGRAM" target="_blank">Buy PDF</a>
+          <a class="buy-btn" href="YOUR_STRIPE_SCANNER_LINK">Start Scanner</a>
         </div>
 
-        <div class="product-card">
-          <h3>BusyTrader Risk Pack</h3>
-          <p>A downloadable PDF bundle with compounding plans, challenge models, and daily discipline sheets.</p>
-          <div class="price">£29</div>
-          <ul class="product-list">
-            <li>Compounding roadmap</li>
-            <li>Daily tracker sheets</li>
-            <li>Prop-style rules</li>
-            <li>Mindset checklist</li>
+        <div class="card pricing-card featured">
+          <h3>AI Copilot</h3>
+          <div class="price">£79/month</div>
+          <p>Advanced AI filtering with desktop-style trading assistance.</p>
+          <ul>
+            <li>Everything in Scanner</li>
+            <li>AI probability scoring</li>
+            <li>Priority updates</li>
           </ul>
-          <a class="buy-btn" href="https://t.me/YOUR_TELEGRAM" target="_blank">Buy Bundle</a>
+          <a class="buy-btn" href="YOUR_STRIPE_COPILOT_LINK">Start Copilot</a>
         </div>
 
-        <div class="product-card">
-          <h3>BusyTrader EA</h3>
-          <p>Your premium Expert Advisor product page for automated trading systems, rules-based execution, and strategy tools.</p>
-          <div class="price">£149</div>
-          <ul class="product-list">
-            <li>EA access</li>
-            <li>Setup instructions</li>
-            <li>Parameter guide</li>
-            <li>Version updates</li>
+        <div class="card pricing-card">
+          <h3>AI AutoTrader</h3>
+          <div class="price">£149/month</div>
+          <p>AI-connected MT4/MT5 automation bridge for advanced users.</p>
+          <ul>
+            <li>MT4/MT5 bridge</li>
+            <li>License validation</li>
+            <li>Auto-trading ready</li>
           </ul>
-          <a class="buy-btn" href="https://t.me/YOUR_TELEGRAM" target="_blank">Buy EA</a>
+          <a class="buy-btn" href="YOUR_STRIPE_AUTOTRADER_LINK">Start AutoTrader</a>
         </div>
       </div>
     </section>
 
-    <section id="loop" class="section">
-      <h2 class="section-title">The BusyTrader Loop System</h2>
+    <section id="shop" class="section">
+      <h2 class="section-title">Shop PDFs & EAs</h2>
       <p class="section-subtitle">
-        This is the growth engine. Every piece of content should feed the site, every site visitor should be pushed to an offer or another platform, and every buyer should be brought back again.
+        Download trading guides, tools, templates, and Expert Advisor resources.
       </p>
 
-      <div class="loop-grid">
-        <div class="loop-card">
-          <div class="loop-step">1</div>
-          <h3>Content</h3>
-          <p>Post on YouTube, TikTok, Instagram, and Facebook with a clear CTA sending people to BusyTraderApp.</p>
+      <div class="grid-3">
+        <div class="card">
+          <h3>Nasdaq Scalping PDF</h3>
+          <p>A practical trading guide with setup rules, entry filters, and risk management framework.</p>
+          <div class="price">£19</div>
+          <a class="buy-btn" href="https://t.me/YOUR_TELEGRAM" target="_blank">Buy PDF</a>
         </div>
 
-        <div class="loop-card">
-          <div class="loop-step">2</div>
-          <h3>Free Tools</h3>
-          <p>Visitors land on calculators and useful free resources, which builds trust and keeps them engaged longer.</p>
+        <div class="card">
+          <h3>BusyTrader Risk Pack</h3>
+          <p>Compounding plans, challenge models, and discipline sheets.</p>
+          <div class="price">£29</div>
+          <a class="buy-btn" href="https://t.me/YOUR_TELEGRAM" target="_blank">Buy Bundle</a>
         </div>
 
-        <div class="loop-card">
-          <div class="loop-step">3</div>
-          <h3>Shop</h3>
-          <p>Once trust is built, present PDFs, bundles, and EAs with clear product pages and direct buy buttons.</p>
-        </div>
-
-        <div class="loop-card">
-          <div class="loop-step">4</div>
-          <h3>Return Traffic</h3>
-          <p>After purchase or visit, direct people back to your socials, Telegram, and next product for repeat exposure.</p>
-        </div>
-      </div>
-
-      <div class="cta-box">
-        <h2>Your website should sell even when you are offline</h2>
-        <p>
-          BusyTraderApp should not just look good. It should guide visitors from content to tools, from tools to products, and from products back into your wider brand ecosystem.
-        </p>
-        <div class="cta-buttons">
-          <a href="https://your-checkout-link.com" class="btn btn-primary">Buy Now</a>
-          <a href="https://t.me/YOUR_TELEGRAM" class="btn btn-secondary">Join Telegram</a>
+        <div class="card">
+          <h3>BusyTrader EA</h3>
+          <p>Expert Advisor tools for rules-based execution and trading automation.</p>
+          <div class="price">£149</div>
+          <a class="buy-btn" href="https://t.me/YOUR_TELEGRAM" target="_blank">Buy EA</a>
         </div>
       </div>
     </section>
 
     <div class="footer">
       © 2026 BusyTraderApp. All rights reserved.<br />
-      Trading tools, digital PDFs, Expert Advisors, and disciplined execution resources.
+      Support: support@busytraderapp.com<br />
+      Payments secured via Stripe.<br />
+      ⚠️ This website is for educational purposes only. Trading involves risk and this is not financial advice.
     </div>
+
   </div>
 
   <script>
@@ -856,7 +560,6 @@
       }
 
       const riskAmount = balance * (risk / 100);
-
       resultBox.innerHTML = `
         Risk per trade: <strong>$${formatMoney(riskAmount)}</strong><br>
         This is <strong>${risk}%</strong> of a <strong>$${formatMoney(balance)}</strong> account.
