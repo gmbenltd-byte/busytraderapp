@@ -10,10 +10,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
   <style>
-    * {
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
+    * { box-sizing: border-box; scroll-behavior: smooth; }
 
     body {
       margin: 0;
@@ -22,13 +19,9 @@
       color: #ffffff;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+    a { color: inherit; text-decoration: none; }
 
     .wrapper {
-      width: 100%;
       max-width: 1240px;
       margin: 0 auto;
       padding: 0 20px 40px;
@@ -37,725 +30,194 @@
     .topbar {
       position: sticky;
       top: 0;
-      z-index: 999;
-      background: rgba(8, 8, 8, 0.95);
-      backdrop-filter: blur(8px);
+      background: rgba(8,8,8,0.95);
       border-bottom: 1px solid #1d1d1d;
+      z-index: 999;
     }
 
     .topbar-inner {
-      max-width: 1240px;
-      margin: 0 auto;
-      padding: 14px 20px;
       display: flex;
       justify-content: space-between;
+      padding: 14px 20px;
       align-items: center;
-      gap: 20px;
-      flex-wrap: wrap;
     }
 
-    .brand {
-      font-size: 22px;
-      font-weight: bold;
-      color: gold;
-    }
+    .brand { color: gold; font-weight: bold; }
 
-    .nav {
-      display: flex;
-      gap: 18px;
-      flex-wrap: wrap;
-    }
+    .nav { display: flex; gap: 15px; }
 
-    .nav a {
-      color: #d4d4d4;
-      font-size: 14px;
-    }
-
-    .nav a:hover {
-      color: gold;
-    }
+    .nav a:hover { color: gold; }
 
     .hero {
-      padding: 80px 0 50px;
       text-align: center;
+      padding: 80px 0;
     }
 
-    .badge,
-    .product-badge {
-      display: inline-block;
-      padding: 8px 14px;
-      border: 1px solid rgba(255, 215, 0, 0.35);
+    .badge {
+      border: 1px solid gold;
+      padding: 6px 12px;
       border-radius: 999px;
       color: gold;
-      font-size: 13px;
-      margin-bottom: 20px;
-      background: rgba(255, 215, 0, 0.06);
     }
 
-    .product-badge {
-      background: gold;
-      color: #111;
-      font-weight: bold;
-      margin-bottom: 14px;
-    }
-
-    h1 {
-      margin: 0;
-      font-size: 54px;
-      line-height: 1.08;
-      letter-spacing: -1px;
-    }
-
-    .hero p {
-      max-width: 820px;
-      margin: 18px auto 0;
-      color: #c7c7c7;
-      font-size: 18px;
-      line-height: 1.7;
-    }
-
-    .hero-buttons {
-      margin-top: 30px;
-      display: flex;
-      justify-content: center;
-      gap: 14px;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 14px 22px;
-      border-radius: 12px;
-      font-weight: bold;
-      transition: 0.2s ease;
-    }
-
-    .btn-primary {
-      background: gold;
-      color: #111;
-    }
-
-    .btn-secondary {
-      background: #151515;
-      border: 1px solid #2b2b2b;
-      color: #ffffff;
-    }
-
-    .btn:hover {
-      transform: translateY(-2px);
-      opacity: 0.95;
-    }
-
-    .social-bar {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 14px;
-      margin-top: 26px;
-    }
-
-    .social-link {
-      padding: 12px 18px;
-      border-radius: 12px;
-      border: 1px solid #262626;
-      background: #111111;
-      color: #dddddd;
-      font-size: 14px;
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      transition: all 0.25s ease;
-    }
-
-    .social-link:hover {
-      transform: translateY(-3px) scale(1.03);
-      border-color: gold;
-    }
-
-    .social-link.youtube i { color: #ff0000; }
-    .social-link.facebook i { color: #1877f2; }
-    .social-link.tiktok i { color: #00f2ea; }
-    .social-link.instagram i { color: #e1306c; }
-    .social-link.telegram i { color: #229ED9; }
+    h1 { font-size: 48px; }
 
     .section {
       padding: 60px 0;
     }
 
     .section-title {
-      font-size: 38px;
       text-align: center;
-      margin: 0 0 14px;
       color: gold;
+      font-size: 32px;
     }
 
     .section-subtitle {
       text-align: center;
-      color: #b8b8b8;
-      max-width: 760px;
-      margin: 0 auto 36px;
-      line-height: 1.7;
-      font-size: 16px;
+      color: #aaa;
+      margin-bottom: 40px;
     }
 
     .grid-3 {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
+      grid-template-columns: repeat(3,1fr);
+      gap: 20px;
     }
 
     .product-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 22px;
-      align-items: stretch;
+      grid-template-columns: repeat(4,1fr);
+      gap: 20px;
     }
 
-    .card,
-    .product-card {
+    .card, .product-card {
       background: #121212;
-      border: 1px solid #232323;
-      border-radius: 18px;
-      padding: 24px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
-      transition: all 0.25s ease;
-    }
-
-    .product-card {
+      padding: 20px;
+      border-radius: 15px;
       display: flex;
       flex-direction: column;
-      height: 100%;
     }
 
-    .card:hover,
-    .product-card:hover {
-      transform: translateY(-5px);
-      border-color: gold;
-      box-shadow: 0 0 26px rgba(255, 215, 0, 0.16);
-    }
-
-    .product-card.featured {
-      border: 2px solid gold;
-      box-shadow: 0 0 30px rgba(255, 215, 0, 0.18);
-    }
-
-    .card h3,
-    .product-card h3 {
-      margin-top: 0;
-      font-size: 22px;
-      color: #fff;
-    }
-
-    .product-card h4 {
-      color: #c9a227;
-      margin: 8px 0 12px;
-      font-size: 16px;
-    }
-
-    .card p,
-    .card li,
-    .product-card p,
-    .product-card li {
-      color: #bfbfbf;
-      line-height: 1.6;
-      font-size: 15px;
-    }
-
-    .price {
-      color: gold;
-      font-size: 30px;
-      font-weight: bold;
-      margin: 14px 0;
-    }
-
-    .buy-btn,
-    .product-btn {
-      display: inline-block;
-      width: 100%;
-      text-align: center;
-      padding: 14px;
-      border-radius: 12px;
-      background: gold;
-      color: #111;
-      font-weight: bold;
-      margin-top: 14px;
-      border: none;
-      cursor: pointer;
-    }
+    .product-card { height: 100%; }
 
     .product-card .product-btn,
     .product-card form {
       margin-top: auto;
     }
 
-    .product-card ul {
-      margin-bottom: 20px;
+    .price {
+      color: gold;
+      font-size: 24px;
+      margin: 10px 0;
     }
 
-    .buy-btn:hover,
-    .product-btn:hover {
-      filter: brightness(1.12);
-    }
-
-    label {
-      display: block;
-      text-align: left;
-      margin: 14px 0 6px;
-      color: #d9d9d9;
-      font-size: 14px;
+    .product-btn, .buy-btn {
+      background: gold;
+      color: #111;
+      padding: 12px;
+      border-radius: 10px;
+      text-align: center;
       font-weight: bold;
+      display: block;
+      margin-top: 10px;
     }
+
+    .product-btn:hover { filter: brightness(1.1); }
 
     input {
       width: 100%;
-      padding: 13px 14px;
-      border-radius: 10px;
-      border: 1px solid #2d2d2d;
+      padding: 10px;
+      margin-top: 10px;
       background: #0d0d0d;
+      border: 1px solid #333;
       color: #fff;
-      font-size: 15px;
-      outline: none;
-    }
-
-    input:focus {
-      border-color: gold;
-    }
-
-    button {
-      width: 100%;
-      margin-top: 16px;
-      padding: 14px;
-      border: none;
-      border-radius: 12px;
-      background: gold;
-      color: #111;
-      font-weight: bold;
-      font-size: 15px;
-      cursor: pointer;
-    }
-
-    .result {
-      margin-top: 18px;
-      padding: 14px;
-      border-radius: 12px;
-      background: #0c0c0c;
-      border: 1px solid #222;
-      color: #7CFFB2;
-      font-size: 16px;
-      line-height: 1.5;
-      min-height: 54px;
-    }
-
-    .pricing-card {
-      border: 1px solid rgba(255, 215, 0, 0.35);
-      text-align: center;
-    }
-
-    .pricing-card.featured {
-      border: 2px solid gold;
-      transform: scale(1.03);
-    }
-
-    .lead-form input {
-      margin-bottom: 12px;
-    }
-
-    .consent {
-      display: flex;
-      align-items: flex-start;
-      gap: 8px;
-      color: #cccccc;
-      font-size: 13px;
-      line-height: 1.4;
-      margin-top: 8px;
-      font-weight: normal;
-    }
-
-    .consent input {
-      width: auto;
-      margin-top: 2px;
     }
 
     .footer {
-      margin-top: 44px;
-      padding: 30px 20px;
-      border-top: 1px solid #1d1d1d;
       text-align: center;
-      color: #8c8c8c;
-      font-size: 14px;
-      line-height: 1.8;
-    }
-
-    @media (max-width: 1100px) {
-      .product-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 900px) {
-      .grid-3 {
-        grid-template-columns: 1fr;
-      }
-
-      .pricing-card.featured {
-        transform: none;
-      }
-
-      h1 {
-        font-size: 36px;
-      }
-
-      .section-title {
-        font-size: 30px;
-      }
-    }
-
-    @media (max-width: 650px) {
-      .product-grid {
-        grid-template-columns: 1fr;
-      }
+      padding: 30px;
+      color: #777;
     }
   </style>
 </head>
 
 <body>
-  <div class="topbar">
-    <div class="topbar-inner">
-      <div class="brand">BusyTraderApp</div>
-      <div class="nav">
-        <a href="#ai">AI Scanner</a>
-        <a href="#tools">Free Tools</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#shop">Shop</a>
-        <a href="#socials">Socials</a>
-      </div>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="brand">BusyTraderApp</div>
+    <div class="nav">
+      <a href="#shop">Shop</a>
     </div>
   </div>
+</div>
 
-  <div class="wrapper">
+<div class="wrapper">
 
-    <section class="hero">
-      <div class="badge">AI Trading Tools • PDFs • EAs</div>
-      <h1>Trade Smarter. Execute Faster. Stay Disciplined.</h1>
-      <p>
-        BusyTraderApp provides AI-powered trading tools, practical calculators,
-        trading PDFs, and automation resources for disciplined traders.
-      </p>
+<section class="hero">
+  <div class="badge">AI Trading Tools</div>
+  <h1>Trade Smarter</h1>
+</section>
 
-      <div class="hero-buttons">
-        <a href="#shop" class="btn btn-primary">View EAs</a>
-        <a href="#tools" class="btn btn-secondary">Use Free Tools</a>
-      </div>
+<section id="shop" class="section">
+  <h2 class="section-title">Products</h2>
 
-      <div id="socials" class="social-bar">
-        <a class="social-link youtube" href="https://www.youtube.com/@BusyTraderTV" target="_blank">
-          <i class="fab fa-youtube"></i> YouTube
-        </a>
-        <a class="social-link facebook" href="https://facebook.com/profile.php?id=61568863708099" target="_blank">
-          <i class="fab fa-facebook-f"></i> Facebook
-        </a>
-        <a class="social-link tiktok" href="https://www.tiktok.com/@busytraderapp" target="_blank">
-          <i class="fab fa-tiktok"></i> TikTok
-        </a>
-        <a class="social-link instagram" href="https://instagram.com/busytraderapp" target="_blank">
-          <i class="fab fa-instagram"></i> Instagram
-        </a>
-        <a class="social-link telegram" href="https://t.me/busytraderhq" target="_blank">
-          <i class="fab fa-telegram-plane"></i> Telegram
-        </a>
-      </div>
-    </section>
+  <div class="product-grid">
 
-    <section id="ai" class="section">
-      <h2 class="section-title">AI-Powered Trading Scanner</h2>
-      <p class="section-subtitle">
-        Scan the market for breakout setups, filter opportunities with AI confidence scoring,
-        and receive alerts through your dashboard and Telegram.
-      </p>
+    <!-- MONTHLY -->
+    <div class="product-card">
+      <h3>NAS100 EA</h3>
+      <div class="price">£49/month</div>
+      <a class="product-btn"
+         href="https://buy.stripe.com/00w00b0N43k3eBheEEds409"
+         target="_blank">
+         Subscribe Monthly
+      </a>
+    </div>
 
-      <div class="grid-3">
-        <div class="card">
-          <h3>1. Market Scanning</h3>
-          <p>The scanner searches for stocks showing trend strength, consolidation, and breakout potential.</p>
-        </div>
+    <!-- ANNUAL -->
+    <div class="product-card">
+      <h3>NAS100 EA Annual</h3>
+      <div class="price">£399/year</div>
+      <a class="product-btn"
+         href="https://buy.stripe.com/4gM4grgM2dYHfFl400ds40a"
+         target="_blank">
+         Get Annual Access
+      </a>
+    </div>
 
-        <div class="card">
-          <h3>2. AI Filtering</h3>
-          <p>Each setup is checked using AI probability scoring before being approved as a signal.</p>
-        </div>
+    <!-- PDF -->
+    <div class="product-card">
+      <h3>Strategy PDF</h3>
+      <div class="price">£19</div>
+      <a class="product-btn"
+         href="https://buy.stripe.com/9B65kvcvMcUD64Laoods40b"
+         target="_blank">
+         Buy PDF
+      </a>
+    </div>
 
-        <div class="card">
-          <h3>3. Alerts & Dashboard</h3>
-          <p>Approved signals can be sent to Telegram and tracked inside your performance dashboard.</p>
-        </div>
-      </div>
-    </section>
+    <!-- FREE -->
+    <div class="product-card">
+      <h3>Free Checklist</h3>
+      <div class="price">£0</div>
 
-    <section id="tools" class="section">
-      <h2 class="section-title">Free Trading Tools</h2>
-      <p class="section-subtitle">
-        Simple calculators to help traders plan risk, growth, and daily targets before placing trades.
-      </p>
+      <form onsubmit="event.preventDefault(); alert('Captured');">
+        <input placeholder="Name" required>
+        <input placeholder="Email" required>
+        <button class="product-btn">Download</button>
+      </form>
 
-      <div class="grid-3">
-        <div class="card">
-          <h3>Risk Calculator</h3>
-          <p>Calculate how much money you are risking per trade.</p>
-
-          <label for="balance">Account Balance ($)</label>
-          <input type="number" id="balance" placeholder="e.g. 5000" />
-
-          <label for="risk">Risk Per Trade (%)</label>
-          <input type="number" id="risk" placeholder="e.g. 1" />
-
-          <button onclick="calcRisk()">Calculate Risk</button>
-          <div class="result" id="riskResult">Your result will appear here.</div>
-        </div>
-
-        <div class="card">
-          <h3>Compounding Calculator</h3>
-          <p>Estimate account growth using a fixed daily return percentage.</p>
-
-          <label for="start">Starting Balance ($)</label>
-          <input type="number" id="start" placeholder="e.g. 1000" />
-
-          <label for="daily">Daily Growth (%)</label>
-          <input type="number" id="daily" placeholder="e.g. 1" />
-
-          <label for="days">Number of Days</label>
-          <input type="number" id="days" placeholder="e.g. 20" />
-
-          <button onclick="calcCompound()">Calculate Growth</button>
-          <div class="result" id="compoundResult">Your result will appear here.</div>
-        </div>
-
-        <div class="card">
-          <h3>Daily Target Calculator</h3>
-          <p>Break a monthly profit goal into a daily target.</p>
-
-          <label for="monthlyGoal">Monthly Profit Goal ($)</label>
-          <input type="number" id="monthlyGoal" placeholder="e.g. 3000" />
-
-          <label for="tradingDays">Trading Days Per Month</label>
-          <input type="number" id="tradingDays" placeholder="e.g. 20" />
-
-          <button onclick="calcDailyTarget()">Calculate Daily Target</button>
-          <div class="result" id="dailyTargetResult">Your result will appear here.</div>
-        </div>
-      </div>
-    </section>
-
-    <section id="pricing" class="section">
-      <h2 class="section-title">BusyTrader AI Subscriptions</h2>
-      <p class="section-subtitle">
-        Choose your plan and unlock AI-powered trading tools.
-      </p>
-
-      <div class="grid-3">
-        <div class="card pricing-card">
-          <h3>AI Scanner</h3>
-          <div class="price">£29/month</div>
-          <p>AI breakout scanner, Telegram alerts, and performance dashboard.</p>
-          <ul>
-            <li>AI-filtered scanner</li>
-            <li>Signal dashboard</li>
-            <li>Telegram alerts</li>
-          </ul>
-          <a class="buy-btn" href="https://buy.stripe.com/6oU6oz9jAbQzal1cwwds407">Start Scanner</a>
-        </div>
-
-        <div class="card pricing-card featured">
-          <h3>AI Copilot</h3>
-          <div class="price">£79/month</div>
-          <p>Advanced AI filtering with desktop-style trading assistance.</p>
-          <ul>
-            <li>Everything in Scanner</li>
-            <li>AI probability scoring</li>
-            <li>Priority updates</li>
-          </ul>
-          <a class="buy-btn" href="https://buy.stripe.com/5kQ00beDU07Rbp5fIIds406">Start Copilot</a>
-        </div>
-
-        <div class="card pricing-card">
-          <h3>AI AutoTrader</h3>
-          <div class="price">£149/month</div>
-          <p>AI-connected MT4/MT5 automation bridge for advanced users.</p>
-          <ul>
-            <li>MT4/MT5 bridge</li>
-            <li>License validation</li>
-            <li>Auto-trading ready</li>
-          </ul>
-          <a class="buy-btn" href="https://buy.stripe.com/fZu6oz9jA3k3bp5eEEds405"target="_blank"Start AutoTrader</a>
-        </div>
-      </div>
-    </section>
-
-    <section id="shop" class="section">
-      <h2 class="section-title">BusyTrader Products</h2>
-      <p class="section-subtitle">
-        Start with the free checklist, upgrade to the strategy PDF, then unlock the full NAS100 EA subscription.
-      </p>
-
-      <div class="product-grid">
-
-        <div class="product-card featured">
-          <span class="product-badge">Main Product</span>
-          <h3>BusyTrader NAS100 Breakout EA</h3>
-          <h4>Monthly Access</h4>
-          <div class="price">£49/month</div>
-          <p>
-            MT4 + MT5 EA with current daily candle bias, M5 breakout logic, PSS volume confirmation,
-            break-even, trailing stop, spread protection, and subscription license validation.
-          </p>
-          <ul>
-            <li>MT4 + MT5 included</li>
-            <li>License key required</li>
-            <li>Account binding enabled</li>
-            <li>Updates while subscribed</li>
-          </ul>
-          <a class="product-btn" href="https://buy.stripe.com/00w00b0N43k3eBheEEds409">Subscribe Monthly</a>
-        </div>
-
-        <div class="product-card">
-          <span class="product-badge">Best Value</span>
-          <h3>BusyTrader NAS100 Breakout EA</h3>
-          <h4>Annual Access</h4>
-          <div class="price">£399/year</div>
-          <p>
-            Full-year access to the BusyTrader NAS100 EA for traders who want a longer-term
-            rules-based breakout system with MT4 and MT5 support.
-          </p>
-          <ul>
-            <li>MT4 + MT5 included</li>
-            <li>Subscription validation</li>
-            <li>Account locked license</li>
-            <li>Priority updates</li>
-          </ul>
-          <a class="product-btn" href="https://buy.stripe.com/4gM4grgM2dYHfFl400ds40a"target="_blank"Get Annual Access</a>
-        </div>
-
-        <div class="product-card">
-          <span class="product-badge">PDF Guide</span>
-          <h3>BusyTrader NAS100 Strategy PDF</h3>
-          <h4>One-Time Purchase</h4>
-          <div class="price">£19</div>
-          <p>
-            Learn the strategy behind the EA: daily bias, breakout zones, PSS volume confirmation,
-            entries, exits, and risk rules.
-          </p>
-          <ul>
-            <li>Entry checklist</li>
-            <li>Risk checklist</li>
-            <li>Trade examples</li>
-            <li>EA logic explained</li>
-          </ul>
-          <a class="product-btn" href="https://buy.stripe.com/9B65kvcvMcUD64Laoods40b"target="_blank"Buy PDF</a>
-        </div>
-
-        <div class="product-card">
-          <span class="product-badge">Free</span>
-          <h3>Free NAS100 Checklist</h3>
-          <h4>Free Trading Resource</h4>
-          <div class="price">£0</div>
-          <p>
-            Download the free NAS100 breakout checklist and learn the core rules used to filter
-            better breakout opportunities.
-          </p>
-
-          <form class="lead-form" onsubmit="handleFreeChecklist(event)">
-            <input type="text" id="leadName" placeholder="Your name" required>
-            <input type="email" id="leadEmail" placeholder="Your email" required>
-            <label class="consent">
-              <input type="checkbox" required>
-              <span>I agree to receive product updates and trading resources.</span>
-            </label>
-            <button type="submit" class="product-btn">Download Free Checklist</button>
-          </form>
-        </div>
-
-      </div>
-    </section>
-
-    <div class="footer">
-      © 2026 BusyTraderApp. All rights reserved.<br />
-      Support: support@busytraderapp.com<br />
-      Payments secured via Stripe.<br />
-      ⚠️ This website is for educational purposes only. Trading involves risk and this is not financial advice.
     </div>
 
   </div>
+</section>
 
-  <script>
-    function formatMoney(value) {
-      return Number(value).toLocaleString(undefined, {
-        minimumFractionDigits: 2,
-        maximumFractionDigits: 2
-      });
-    }
+<div class="footer">
+  © BusyTraderApp
+</div>
 
-    function calcRisk() {
-      const balance = parseFloat(document.getElementById("balance").value);
-      const risk = parseFloat(document.getElementById("risk").value);
-      const resultBox = document.getElementById("riskResult");
+</div>
 
-      if (isNaN(balance) || isNaN(risk) || balance <= 0 || risk <= 0) {
-        resultBox.innerHTML = "Please enter valid positive numbers.";
-        return;
-      }
-
-      const riskAmount = balance * (risk / 100);
-      resultBox.innerHTML = `
-        Risk per trade: <strong>$${formatMoney(riskAmount)}</strong><br>
-        This is <strong>${risk}%</strong> of a <strong>$${formatMoney(balance)}</strong> account.
-      `;
-    }
-
-    function calcCompound() {
-      const start = parseFloat(document.getElementById("start").value);
-      const daily = parseFloat(document.getElementById("daily").value);
-      const days = parseFloat(document.getElementById("days").value);
-      const resultBox = document.getElementById("compoundResult");
-
-      if (isNaN(start) || isNaN(daily) || isNaN(days) || start <= 0 || daily <= 0 || days <= 0) {
-        resultBox.innerHTML = "Please enter valid positive numbers.";
-        return;
-      }
-
-      const finalBalance = start * Math.pow(1 + (daily / 100), days);
-      const profit = finalBalance - start;
-
-      resultBox.innerHTML = `
-        Final balance: <strong>$${formatMoney(finalBalance)}</strong><br>
-        Total projected profit: <strong>$${formatMoney(profit)}</strong>
-      `;
-    }
-
-    function calcDailyTarget() {
-      const monthlyGoal = parseFloat(document.getElementById("monthlyGoal").value);
-      const tradingDays = parseFloat(document.getElementById("tradingDays").value);
-      const resultBox = document.getElementById("dailyTargetResult");
-
-      if (isNaN(monthlyGoal) || isNaN(tradingDays) || monthlyGoal <= 0 || tradingDays <= 0) {
-        resultBox.innerHTML = "Please enter valid positive numbers.";
-        return;
-      }
-
-      const dailyTarget = monthlyGoal / tradingDays;
-
-      resultBox.innerHTML = `
-        Required daily target: <strong>$${formatMoney(dailyTarget)}</strong><br>
-        To reach <strong>$${formatMoney(monthlyGoal)}</strong> in <strong>${tradingDays}</strong> trading days.
-      `;
-    }
-
-    function handleFreeChecklist(event) {
-      event.preventDefault();
-
-      const name = document.getElementById("leadName").value;
-      const email = document.getElementById("leadEmail").value;
-
-      alert("Thank you " + name + "! Your free checklist request has been received for: " + email);
-    }
-  </script>
 </body>
 </html>
