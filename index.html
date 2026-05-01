@@ -198,15 +198,17 @@
       font-size: 16px;
     }
 
-    .grid-3,
-    .product-grid {
+    .grid-3 {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 22px;
     }
 
     .product-grid {
+      display: grid;
       grid-template-columns: repeat(4, 1fr);
+      gap: 22px;
+      align-items: stretch;
     }
 
     .card,
@@ -216,19 +218,13 @@
       border-radius: 18px;
       padding: 24px;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+      transition: all 0.25s ease;
+    }
 
+    .product-card {
       display: flex;
       flex-direction: column;
       height: 100%;
-   .product-card .product-btn,
-   .product-card form {
-      margin-top: auto;
-   .product-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 22px;
-      align-items: stretch;
-
     }
 
     .card:hover,
@@ -285,6 +281,15 @@
       margin-top: 14px;
       border: none;
       cursor: pointer;
+    }
+
+    .product-card .product-btn,
+    .product-card form {
+      margin-top: auto;
+    }
+
+    .product-card ul {
+      margin-bottom: 20px;
     }
 
     .buy-btn:hover,
@@ -750,8 +755,6 @@
       const email = document.getElementById("leadEmail").value;
 
       alert("Thank you " + name + "! Your free checklist request has been received for: " + email);
-
-      // Later connect this form to your backend, Google Sheet, MailerLite, ConvertKit, or database.
     }
   </script>
 </body>
