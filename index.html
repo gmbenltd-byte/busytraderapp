@@ -13,18 +13,30 @@
     * {
       box-sizing: border-box;
       scroll-behavior: smooth;
+      #socials {
+        scroll-margin-top: 90px;
+}
     }
 
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: linear-gradient(180deg, #070707 0%, #101010 100%);
+      background: radial-gradient(circle at top, #1a1605 0%, #070707 35%, #101010 100%);
       color: #ffffff;
     }
 
     a {
       color: inherit;
       text-decoration: none;
+    }
+
+    .update-banner {
+      background: #111;
+      border-bottom: 1px solid #222;
+      text-align: center;
+      padding: 8px;
+      font-size: 13px;
+      color: #aaa;
     }
 
     .wrapper {
@@ -39,7 +51,7 @@
       top: 0;
       z-index: 999;
       background: rgba(8, 8, 8, 0.95);
-      backdrop-filter: blur(8px);
+      backdrop-filter: blur(10px);
       border-bottom: 1px solid #1d1d1d;
     }
 
@@ -56,8 +68,9 @@
 
     .brand {
       font-size: 22px;
-      font-weight: bold;
+      font-weight: 900;
       color: gold;
+      text-shadow: 0 0 14px rgba(255, 215, 0, 0.35);
     }
 
     .nav {
@@ -69,6 +82,7 @@
     .nav a {
       color: #d4d4d4;
       font-size: 14px;
+      transition: 0.25s ease;
     }
 
     .nav a:hover {
@@ -76,8 +90,9 @@
     }
 
     .hero {
-      padding: 80px 0 50px;
+      padding: 86px 0 55px;
       text-align: center;
+      animation: fadeUp 0.9s ease both;
     }
 
     .badge,
@@ -93,17 +108,23 @@
     }
 
     .product-badge {
-      background: gold;
+      background: linear-gradient(90deg, #8c6a1e, gold, #c9a227);
       color: #111;
-      font-weight: bold;
+      font-weight: 900;
       margin-bottom: 14px;
+      border: none;
     }
 
     h1 {
       margin: 0;
-      font-size: 54px;
+      font-size: 56px;
       line-height: 1.08;
       letter-spacing: -1px;
+    }
+
+    .gold-text {
+      color: gold;
+      text-shadow: 0 0 20px rgba(255, 215, 0, 0.25);
     }
 
     .hero p {
@@ -115,7 +136,7 @@
     }
 
     .hero-buttons {
-      margin-top: 30px;
+      margin-top: 32px;
       display: flex;
       justify-content: center;
       gap: 14px;
@@ -124,15 +145,16 @@
 
     .btn {
       display: inline-block;
-      padding: 14px 22px;
-      border-radius: 12px;
-      font-weight: bold;
-      transition: 0.2s ease;
+      padding: 15px 24px;
+      border-radius: 14px;
+      font-weight: 900;
+      transition: 0.25s ease;
     }
 
     .btn-primary {
-      background: gold;
+      background: linear-gradient(90deg, #8c6a1e, gold, #c9a227);
       color: #111;
+      box-shadow: 0 0 24px rgba(255, 215, 0, 0.28);
     }
 
     .btn-secondary {
@@ -141,9 +163,20 @@
       color: #ffffff;
     }
 
+    .btn-telegram {
+      background: #111;
+      border: 1px solid rgba(34, 158, 217, 0.7);
+      color: #ffffff;
+      box-shadow: 0 0 18px rgba(34, 158, 217, 0.12);
+    }
+
+    .btn-telegram i {
+      color: #229ED9;
+    }
+
     .btn:hover {
-      transform: translateY(-2px);
-      opacity: 0.95;
+      transform: translateY(-3px);
+      filter: brightness(1.1);
     }
 
     .social-bar {
@@ -151,7 +184,7 @@
       justify-content: center;
       flex-wrap: wrap;
       gap: 14px;
-      margin-top: 26px;
+      margin-top: 28px;
     }
 
     .social-link {
@@ -170,6 +203,7 @@
     .social-link:hover {
       transform: translateY(-3px) scale(1.03);
       border-color: gold;
+      box-shadow: 0 0 18px rgba(255, 215, 0, 0.18);
     }
 
     .social-link.youtube i { color: #ff0000; }
@@ -179,7 +213,8 @@
     .social-link.telegram i { color: #229ED9; }
 
     .section {
-      padding: 60px 0;
+      padding: 64px 0;
+      animation: fadeUp 0.8s ease both;
     }
 
     .section-title {
@@ -192,10 +227,27 @@
     .section-subtitle {
       text-align: center;
       color: #b8b8b8;
-      max-width: 760px;
-      margin: 0 auto 36px;
+      max-width: 780px;
+      margin: 0 auto 38px;
       line-height: 1.7;
       font-size: 16px;
+    }
+
+    .trust-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin: 25px auto 0;
+      max-width: 950px;
+    }
+
+    .trust-item {
+      background: rgba(255, 215, 0, 0.06);
+      border: 1px solid rgba(255, 215, 0, 0.14);
+      padding: 13px;
+      border-radius: 14px;
+      color: #ddd;
+      font-size: 14px;
     }
 
     .grid-3 {
@@ -207,34 +259,57 @@
 
     .product-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(5, 1fr);
       gap: 22px;
       align-items: stretch;
     }
 
     .card,
     .product-card {
-      background: #121212;
+      background: linear-gradient(180deg, #141414, #0b0b0b);
       border: 1px solid #232323;
-      border-radius: 18px;
+      border-radius: 20px;
       padding: 24px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
-      transition: all 0.25s ease;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.28);
+      transition: all 0.28s ease;
       display: flex;
       flex-direction: column;
       height: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before,
+    .product-card::before {
+      content: "";
+      position: absolute;
+      inset: -1px;
+      background: linear-gradient(120deg, transparent, rgba(255,215,0,0.12), transparent);
+      opacity: 0;
+      transition: 0.28s ease;
+      pointer-events: none;
+    }
+
+    .card:hover::before,
+    .product-card:hover::before {
+      opacity: 1;
     }
 
     .card:hover,
     .product-card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-7px);
       border-color: gold;
-      box-shadow: 0 0 26px rgba(255, 215, 0, 0.16);
+      box-shadow: 0 0 34px rgba(255, 215, 0, 0.18);
     }
 
     .product-card.featured {
       border: 2px solid gold;
-      box-shadow: 0 0 30px rgba(255, 215, 0, 0.18);
+      box-shadow: 0 0 32px rgba(255, 215, 0, 0.22);
+    }
+
+    .product-card.telegram-feature {
+      border: 1px solid rgba(34, 158, 217, 0.75);
+      box-shadow: 0 0 26px rgba(34, 158, 217, 0.12);
     }
 
     .card h3,
@@ -262,7 +337,7 @@
     .price {
       color: gold;
       font-size: 30px;
-      font-weight: bold;
+      font-weight: 900;
       margin: 14px 0;
     }
 
@@ -272,18 +347,27 @@
       width: 100%;
       text-align: center;
       padding: 14px;
-      border-radius: 12px;
-      background: gold;
+      border-radius: 13px;
+      background: linear-gradient(90deg, #8c6a1e, gold, #c9a227);
       color: #111;
-      font-weight: bold;
+      font-weight: 900;
       margin-top: auto;
       border: none;
       cursor: pointer;
       font-size: 15px;
+      box-shadow: 0 0 18px rgba(255, 215, 0, 0.18);
+      transition: 0.25s ease;
+    }
+
+    .telegram-btn {
+      background: linear-gradient(90deg, #126895, #229ED9, #50c9ff);
+      color: #fff;
+      box-shadow: 0 0 18px rgba(34, 158, 217, 0.22);
     }
 
     .buy-btn:hover,
     .product-btn:hover {
+      transform: translateY(-2px);
       filter: brightness(1.12);
     }
 
@@ -291,6 +375,18 @@
     .pricing-card ul {
       margin-bottom: 22px;
       padding-left: 20px;
+    }
+
+    .cta-note {
+      display: block;
+      color: #8f8f8f;
+      font-size: 12px;
+      margin-top: 10px;
+      line-height: 1.4;
+    }
+
+    .cta-note i {
+      color: #229ED9;
     }
 
     label {
@@ -385,14 +481,30 @@
       line-height: 1.8;
     }
 
-    @media (max-width: 1100px) {
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(18px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 1200px) {
       .product-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .trust-strip {
         grid-template-columns: repeat(2, 1fr);
       }
     }
 
     @media (max-width: 900px) {
-      .grid-3 {
+      .grid-3,
+      .product-grid {
         grid-template-columns: 1fr;
       }
 
@@ -403,13 +515,13 @@
       .section-title {
         font-size: 30px;
       }
+
+      .trust-strip {
+        grid-template-columns: 1fr;
+      }
     }
 
     @media (max-width: 650px) {
-      .product-grid {
-        grid-template-columns: 1fr;
-      }
-
       .topbar-inner {
         justify-content: center;
       }
@@ -421,20 +533,16 @@
   </style>
 </head>
 
-<<body>
+<body>
 
-<div style="
-  background: #111;
-  border-bottom: 1px solid #222;
-  text-align:center;
-  padding:8px;
-  font-size:13px;
-  color:#aaa;">
-  🚧 New features and tools are being added weekly.
-</div>body>
+  <div class="update-banner">
+    🚧 New features and tools are being added weekly.
+  </div>
+
   <div class="topbar">
     <div class="topbar-inner">
       <div class="brand">BusyTraderApp</div>
+
       <div class="nav">
         <a href="#ai">AI Scanner</a>
         <a href="#tools">Free Tools</a>
@@ -448,25 +556,39 @@
   <div class="wrapper">
 
     <section class="hero">
-      <div class="badge">AI Trading Tools • PDFs • EAs</div>
+      <div class="badge">AI Trading Tools • PDFs • EAs • Telegram Signals</div>
 
-      <h1>Trade Smarter. Execute Faster. Stay Disciplined.</h1>
+      <h1>Trade Smarter. <span class="gold-text">Execute Faster.</span> Stay Disciplined.</h1>
 
       <p>
-        BusyTraderApp provides AI-powered trading tools, practical calculators,
-        trading PDFs, and automation resources for disciplined traders.
+        BusyTraderApp gives traders structured tools, NAS100 resources, automation products,
+        and Telegram updates designed to support disciplined execution.
       </p>
 
+      <div class="trust-strip">
+        <div class="trust-item">✅ MT4 + MT5 Support</div>
+        <div class="trust-item">🔐 License Validation</div>
+        <div class="trust-item">📲 Telegram Updates</div>
+        <div class="trust-item">⚠️ Risk-First Tools</div>
+      </div>
+
       <div class="hero-buttons">
-        <a href="#shop" class="btn btn-primary">View EAs</a>
+        <a href="#shop" class="btn btn-primary">View EAs & Products</a>
+
         <a href="#tools" class="btn btn-secondary">Use Free Tools</a>
-  
-        <a href="https://t.me/busytraderhq" target="_blank" class="btn btn-secondary">
-          📲 Join Telegram Signals
+
+        <a href="https://t.me/busytraderhq" target="_blank" class="btn btn-telegram">
+          <i class="fab fa-telegram-plane"></i> Join Telegram Signals
         </a>
       </div>
 
-      <div id="socials" class="social-bar">
+      <section id="socials" class="section">
+        <h2 class="section-title">Follow BusyTraderApp</h2>
+        <p class="section-subtitle">
+          Join the community and follow updates across YouTube, Telegram, TikTok, Instagram, and Facebook.
+        </p>
+
+        <div class="social-bar">
         <a class="social-link youtube" href="https://www.youtube.com/@BusyTraderTV" target="_blank">
           <i class="fab fa-youtube"></i> YouTube
         </a>
@@ -574,7 +696,7 @@
       <h2 class="section-title">BusyTrader AI Subscriptions</h2>
 
       <p class="section-subtitle">
-        Choose your plan and unlock AI-powered trading tools.
+        Choose your plan and unlock AI-powered trading tools. Start small, then upgrade when you are ready.
       </p>
 
       <div class="grid-3">
@@ -591,6 +713,10 @@
           </ul>
 
           <a class="buy-btn" href="https://buy.stripe.com/6oU6oz9jAbQzal1cwwds407" target="_blank">Start Scanner</a>
+
+          <small class="cta-note">
+            <i class="fab fa-telegram-plane"></i> Includes Telegram-style alert workflow.
+          </small>
         </div>
 
         <div class="card pricing-card featured">
@@ -606,6 +732,10 @@
           </ul>
 
           <a class="buy-btn" href="https://buy.stripe.com/5kQ00beDU07Rbp5fIIds406" target="_blank">Start Copilot</a>
+
+          <small class="cta-note">
+            <i class="fab fa-telegram-plane"></i> Get faster updates and signal workflow support.
+          </small>
         </div>
 
         <div class="card pricing-card">
@@ -621,6 +751,10 @@
           </ul>
 
           <a class="buy-btn" href="https://buy.stripe.com/fZu6oz9jA3k3bp5eEEds405" target="_blank">Start AutoTrader</a>
+
+          <small class="cta-note">
+            <i class="fab fa-telegram-plane"></i> Telegram updates help you stay informed.
+          </small>
         </div>
       </div>
     </section>
@@ -629,7 +763,8 @@
       <h2 class="section-title">BusyTrader Products</h2>
 
       <p class="section-subtitle">
-        Start with the free checklist, upgrade to the strategy PDF, then unlock the full NAS100 EA subscription.
+        Start with the free checklist, join Telegram for live updates, upgrade to the strategy PDF,
+        then unlock the full NAS100 EA subscription.
       </p>
 
       <div class="product-grid">
@@ -654,7 +789,9 @@
             <li>Updates while subscribed</li>
           </ul>
 
-          <a class="product-btn" href="https://buy.stripe.com/00w00b0N43k3eBheEEds409" target="_blank">Subscribe Monthly</a>
+          <a class="product-btn" href="https://buy.stripe.com/00w00b0N43k3eBheEEds409" target="_blank">
+            Subscribe Monthly
+          </a>
         </div>
 
         <div class="product-card">
@@ -677,7 +814,9 @@
             <li>Priority updates</li>
           </ul>
 
-          <a class="product-btn" href="https://buy.stripe.com/4gM4grgM2dYHfFl400ds40a" target="_blank">Get Annual Access</a>
+          <a class="product-btn" href="https://buy.stripe.com/4gM4grgM2dYHfFl400ds40a" target="_blank">
+            Get Annual Access
+          </a>
         </div>
 
         <div class="product-card">
@@ -700,7 +839,33 @@
             <li>EA logic explained</li>
           </ul>
 
-          <a class="product-btn" href="https://buy.stripe.com/9B65kvcvMcUD64Laoods40b" target="_blank">Buy PDF</a>
+          <a class="product-btn" href="https://buy.stripe.com/9B65kvcvMcUD64Laoods40b" target="_blank">
+            Buy PDF
+          </a>
+        </div>
+
+        <div class="product-card telegram-feature">
+          <span class="product-badge">Signals</span>
+
+          <h3><i class="fab fa-telegram-plane" style="color:#229ED9;"></i> Telegram Signals</h3>
+          <h4>Free / VIP Access</h4>
+
+          <div class="price">Free</div>
+
+          <p>
+            Receive NAS100 breakout updates, trade ideas, market notes, and product announcements directly on Telegram.
+          </p>
+
+          <ul>
+            <li>Real-time trading updates</li>
+            <li>NAS100 breakout alerts</li>
+            <li>Market commentary</li>
+            <li>VIP upgrades coming</li>
+          </ul>
+
+          <a class="product-btn telegram-btn" href="https://t.me/busytraderhq" target="_blank">
+            <i class="fab fa-telegram-plane"></i> Join Telegram
+          </a>
         </div>
 
         <div class="product-card">
