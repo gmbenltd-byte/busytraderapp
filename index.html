@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
   <!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-SL3REJE3CS"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SL3REJE3CS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag("js", new Date());
+    gtag("config", "G-SL3REJE3CS");
+  </script>
 
-  gtag('config', 'G-SL3REJE3CS');
-</script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -24,11 +24,7 @@
       scroll-behavior: smooth;
     }
 
-    #socials,
-    #ai,
-    #tools,
-    #pricing,
-    #shop {
+    #socials, #ai, #tools, #pricing, #shop {
       scroll-margin-top: 95px;
     }
 
@@ -125,7 +121,6 @@
       background: linear-gradient(90deg, #8c6a1e, gold, #c9a227);
       color: #111;
       font-weight: 900;
-      margin-bottom: 14px;
       border: none;
     }
 
@@ -211,9 +206,6 @@
       border: 1px solid rgba(34, 158, 217, 0.7);
       color: #ffffff;
       box-shadow: 0 0 18px rgba(34, 158, 217, 0.12);
-      pointer-events: auto;
-      position: relative;
-      z-index: 10;
     }
 
     .btn-telegram i {
@@ -284,6 +276,7 @@
       grid-template-columns: repeat(3, 1fr);
       gap: 22px;
       align-items: stretch;
+      width: 100%;
     }
 
     .product-grid {
@@ -603,10 +596,8 @@
 
       <div class="hero-buttons">
         <a href="#shop" class="btn btn-primary">View EAs & Products</a>
-
         <a href="#tools" class="btn btn-secondary">Use Free Tools</a>
-
-        <a href="https://t.me/BusyTraderApp_Scannerbot" target="_blank" class="btn btn-telegram">
+        <a href="https://t.me/BusyTraderApp_Scannerbot" target="_blank" class="btn btn-telegram" onclick="trackClick('Telegram Signals Button')">
           <i class="fab fa-telegram-plane"></i> Join Telegram Signals
         </a>
       </div>
@@ -619,23 +610,23 @@
       </p>
 
       <div class="social-bar">
-        <a class="social-link telegram" href="https://t.me/busytraderhq" target="_blank">
+        <a class="social-link telegram" href="https://t.me/busytraderhq" target="_blank" onclick="trackClick('Telegram Social')">
           <i class="fab fa-telegram-plane"></i> Telegram
         </a>
 
-        <a class="social-link youtube" href="https://www.youtube.com/@BusyTraderTV" target="_blank">
+        <a class="social-link youtube" href="https://www.youtube.com/@BusyTraderTV" target="_blank" onclick="trackClick('YouTube Social')">
           <i class="fab fa-youtube"></i> YouTube
         </a>
 
-        <a class="social-link facebook" href="https://facebook.com/profile.php?id=61568863708099" target="_blank">
+        <a class="social-link facebook" href="https://facebook.com/profile.php?id=61568863708099" target="_blank" onclick="trackClick('Facebook Social')">
           <i class="fab fa-facebook-f"></i> Facebook
         </a>
 
-        <a class="social-link tiktok" href="https://www.tiktok.com/@busytraderapp" target="_blank">
+        <a class="social-link tiktok" href="https://www.tiktok.com/@busytraderapp" target="_blank" onclick="trackClick('TikTok Social')">
           <i class="fab fa-tiktok"></i> TikTok
         </a>
 
-        <a class="social-link instagram" href="https://instagram.com/busytraderapp" target="_blank">
+        <a class="social-link instagram" href="https://instagram.com/busytraderapp" target="_blank" onclick="trackClick('Instagram Social')">
           <i class="fab fa-instagram"></i> Instagram
         </a>
       </div>
@@ -722,81 +713,81 @@
       </div>
     </section>
 
-   <section id="pricing" class="section">
-  <h2 class="section-title">BusyTrader AI Subscriptions</h2>
+    <section id="pricing" class="section">
+      <h2 class="section-title">BusyTrader AI Subscriptions</h2>
 
-  <p class="section-subtitle">
-    AI Scanner, AI Copilot, and AI AutoTrader are currently in development.
-    Join early access for launch updates.
-  </p>
+      <p class="section-subtitle">
+        AI Scanner, AI Copilot, and AI AutoTrader are currently in development.
+        Join early access for launch updates.
+      </p>
 
-  <div class="grid-3">
+      <div class="grid-3">
 
-    <div class="card pricing-card">
-      <h3>AI Scanner</h3>
-      <div class="price">Coming Soon</div>
+        <div class="card pricing-card">
+          <h3>AI Scanner</h3>
+          <div class="price">Coming Soon</div>
 
-      <p>AI breakout scanner, Telegram alerts, and performance dashboard.</p>
+          <p>AI breakout scanner, Telegram alerts, and performance dashboard.</p>
 
-      <ul>
-        <li>AI-filtered scanner</li>
-        <li>Signal dashboard</li>
-        <li>Telegram alerts</li>
-      </ul>
+          <ul>
+            <li>AI-filtered scanner</li>
+            <li>Signal dashboard</li>
+            <li>Telegram alerts</li>
+          </ul>
 
-      <a class="buy-btn" href="https://t.me/busytraderhq" target="_blank">
-        Join Beta Access
-      </a>
+          <a class="buy-btn" href="https://t.me/busytraderhq" target="_blank" onclick="trackClick('AI Scanner Beta')">
+            Join Beta Access
+          </a>
 
-      <small class="cta-note">
-        <i class="fab fa-telegram-plane"></i> Get early access when AI Scanner launches.
-      </small>
-    </div>
+          <small class="cta-note">
+            <i class="fab fa-telegram-plane"></i> Get early access when AI Scanner launches.
+          </small>
+        </div>
 
-    <div class="card pricing-card featured">
-      <h3>AI Copilot</h3>
-      <div class="price">Coming Soon</div>
+        <div class="card pricing-card featured">
+          <h3>AI Copilot</h3>
+          <div class="price">Coming Soon</div>
 
-      <p>Advanced AI filtering with desktop-style trading assistance.</p>
+          <p>Advanced AI filtering with desktop-style trading assistance.</p>
 
-      <ul>
-        <li>Everything in Scanner</li>
-        <li>AI probability scoring</li>
-        <li>Priority updates</li>
-      </ul>
+          <ul>
+            <li>Everything in Scanner</li>
+            <li>AI probability scoring</li>
+            <li>Priority updates</li>
+          </ul>
 
-      <a class="buy-btn" href="https://t.me/busytraderhq" target="_blank">
-        Join Beta Access
-      </a>
+          <a class="buy-btn" href="https://t.me/busytraderhq" target="_blank" onclick="trackClick('AI Copilot Beta')">
+            Join Beta Access
+          </a>
 
-      <small class="cta-note">
-        <i class="fab fa-telegram-plane"></i> Get updates when AI Copilot launches.
-      </small>
-    </div>
+          <small class="cta-note">
+            <i class="fab fa-telegram-plane"></i> Get updates when AI Copilot launches.
+          </small>
+        </div>
 
-    <div class="card pricing-card">
-      <h3>AI AutoTrader</h3>
-      <div class="price">Coming Soon</div>
+        <div class="card pricing-card">
+          <h3>AI AutoTrader</h3>
+          <div class="price">Coming Soon</div>
 
-      <p>Future AI-connected MT4/MT5 automation bridge for advanced users.</p>
+          <p>Future AI-connected MT4/MT5 automation bridge for advanced users.</p>
 
-      <ul>
-        <li>MT4/MT5 bridge</li>
-        <li>License validation</li>
-        <li>Auto-trading ready</li>
-      </ul>
+          <ul>
+            <li>MT4/MT5 bridge</li>
+            <li>License validation</li>
+            <li>Auto-trading ready</li>
+          </ul>
 
-      <a class="buy-btn" href="https://t.me/busytraderhq" target="_blank">
-        Join Beta Access
-      </a>
+          <a class="buy-btn" href="https://t.me/busytraderhq" target="_blank" onclick="trackClick('AI AutoTrader Beta')">
+            Join Beta Access
+          </a>
 
-      <small class="cta-note">
-        <i class="fab fa-telegram-plane"></i> Join Telegram for launch updates.
-      </small>
-    </div>
+          <small class="cta-note">
+            <i class="fab fa-telegram-plane"></i> Join Telegram for launch updates.
+          </small>
+        </div>
 
-  </div>
-</section>
+      </div>
+    </section>
 
     <section id="shop" class="section">
       <h2 class="section-title">BusyTrader Products</h2>
@@ -828,7 +819,10 @@
             <li>Updates while subscribed</li>
           </ul>
 
-          <a class="product-btn" href="https://buy.stripe.com/00w00b0N43k3eBheEEds409" target="_blank">
+          <a class="product-btn"
+             href="https://buy.stripe.com/00w00b0N43k3eBheEEds409"
+             target="_blank"
+             onclick="trackClick('NAS100 EA Monthly')">
             Subscribe Monthly
           </a>
         </div>
@@ -853,7 +847,10 @@
             <li>Priority updates</li>
           </ul>
 
-          <a class="product-btn" href="https://buy.stripe.com/4gM4grgM2dYHfFl400ds40a" target="_blank">
+          <a class="product-btn"
+             href="https://buy.stripe.com/4gM4grgM2dYHfFl400ds40a"
+             target="_blank"
+             onclick="trackClick('NAS100 EA Annual')">
             Get Annual Access
           </a>
         </div>
@@ -878,7 +875,10 @@
             <li>EA logic explained</li>
           </ul>
 
-          <a class="product-btn" href="https://buy.stripe.com/9B65kvcvMcUD64Laoods40b" target="_blank">
+          <a class="product-btn"
+             href="https://buy.stripe.com/9B65kvcvMcUD64Laoods40b"
+             target="_blank"
+             onclick="trackClick('NAS100 PDF')">
             Buy PDF
           </a>
         </div>
@@ -902,7 +902,10 @@
             <li>VIP upgrades coming</li>
           </ul>
 
-          <a class="product-btn telegram-btn" href="https://t.me/busytraderhq" target="_blank">
+          <a class="product-btn telegram-btn"
+             href="https://t.me/busytraderhq"
+             target="_blank"
+             onclick="trackClick('Telegram Product Card')">
             <i class="fab fa-telegram-plane"></i> Join Telegram
           </a>
         </div>
@@ -946,6 +949,15 @@
   </div>
 
   <script>
+    function trackClick(label) {
+      if (typeof gtag === "function") {
+        gtag("event", "button_click", {
+          event_category: "engagement",
+          event_label: label
+        });
+      }
+    }
+
     function formatMoney(value) {
       return Number(value).toLocaleString(undefined, {
         minimumFractionDigits: 2,
@@ -1014,6 +1026,8 @@
 
       const name = document.getElementById("leadName").value;
       const email = document.getElementById("leadEmail").value;
+
+      trackClick("Free Checklist Form");
 
       alert("Thank you " + name + "! Your free checklist request has been received for: " + email);
     }
